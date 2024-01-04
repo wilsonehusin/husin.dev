@@ -1,0 +1,35 @@
+baseURL = 'https://husin.dev/'
+languageCode = 'en-us'
+
+title = 'Wilson Husin'
+
+enableGitInfo = true
+
+[params]
+  description = "Personal site maintainted by Wilson Husin. Writing about software engineering within developer productivity, platform infrastructure, and web applications with perspectives of human-computer ergonomics and software performance."
+
+[frontmatter]
+  lastmod = [":git", "lastmod", "date"]
+
+[menu]
+[[menu.main]]
+  identifier = "posts"
+  name = "posts"
+  title = "Posts"
+  url = "/posts/"
+  weight = "100"
+[[menu.main]]
+  identifier = "hire-me"
+  name = "hire-me"
+  title = "Hire me"
+  url = "/"
+  weight = "101"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+[imaging]
+  [imaging.exif]
+    disableDate = true
+    disableLatLong = true
