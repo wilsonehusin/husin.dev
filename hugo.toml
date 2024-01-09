@@ -5,6 +5,10 @@ title = 'Wilson Husin'
 
 enableGitInfo = true
 
+[build]
+[build.buildStats]
+enable = true
+
 [params]
   description = "Personal site maintainted by Wilson Husin. Writing about software engineering within developer productivity, platform infrastructure, and web applications with perspectives of human-computer ergonomics and software performance."
 
@@ -13,17 +17,35 @@ enableGitInfo = true
 
 [menu]
 [[menu.main]]
-  identifier = "posts"
-  name = "posts"
-  title = "Posts"
-  url = "/posts/"
+  identifier = "about"
+  name = "about"
+  title = "About"
+  url = "/about/"
+  weight = "001"
+[[menu.main]]
+  identifier = "blog"
+  name = "blog"
+  title = "Blog"
+  url = "/blog/"
   weight = "100"
+[[menu.main]]
+  identifier = "mini"
+  name = "mini"
+  title = "Mini"
+  url = "/mini/"
+  weight = "101"
+[[menu.main]]
+  identifier = "visual"
+  name = "visual"
+  title = "Visual"
+  url = "/visual/"
+  weight = "102"
 [[menu.main]]
   identifier = "hire-me"
   name = "hire-me"
   title = "Hire me"
-  url = "/"
-  weight = "101"
+  url = "/hire-me/"
+  weight = "901"
 
 [markup]
   [markup.highlight]

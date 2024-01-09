@@ -4,8 +4,10 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     hugo
-    tailwindcss
     hivemind
     just
+
+    nodejs_20
+    nodejs_20.pkgs.pnpm
   ];
 }

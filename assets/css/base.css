@@ -1,0 +1,77 @@
+@import "./sizes.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-default {
+    color: var(--fg2);
+  }
+
+  .text-link {
+    @apply text-fg1;
+  }
+  .group:hover .text-link,
+  .text-link:hover {
+    @apply text-orange;
+  }
+
+  body {
+    @apply transition text-default bg-bg-hard;
+  }
+
+  nav .lucide {
+    min-height: 24px;
+    min-width: 24px;
+
+    &:hover {
+      fill: currentColor;
+    }
+  }
+
+  .text-link:hover .lucide {
+    fill: currentColor;
+  }
+
+  nav .lucide-moon {
+    @apply inline-block dark:hidden;
+  }
+
+  nav .lucide-lightbulb {
+    @apply hidden dark:inline-block;
+  }
+
+  /* Navigation items */
+  nav a.text-link {
+    /* Offsetting the underline */
+    margin-bottom: -6px;
+
+    &:after {
+      content: "";
+      background: transparent;
+      display: block;
+      height: 6px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -8px;
+      transition:
+        width 0.1s ease,
+        background-color 0.1s ease;
+      width: 0px;
+    }
+
+    &:hover:after {
+      width: 100%;
+      opacity: 50%;
+      @apply bg-yellow-dim;
+    }
+  }
+
+  /* Rendered markdown content */
+  .prose {
+    & pre {
+      @apply border rounded border-bg1 hover:border-bg4;
+    }
+  }
+}

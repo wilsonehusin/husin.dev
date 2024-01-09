@@ -1,11 +1,13 @@
 hugo-dev:
-  hugo server --bind 0.0.0.0
+  rm -rf public/*
+  hugo server --bind 0.0.0.0 --renderToDisk --templateMetrics --templateMetricsHints
 
 hugo-build: css-gen
-  hugo
+  rm -rf public/*
+  hugo --gc --minify
 
 css-gen:
-  tailwindcss -i assets/css/base.css -o assets/css/style.css --minify
+  pnpm tailwindcss -i assets/css/base.css -o assets/css/style.css --minify
 
 css-watch:
-  tailwindcss -i assets/css/base.css -o assets/css/style.css --watch
+  pnpm tailwindcss -i assets/css/base.css -o assets/css/style.css --watch

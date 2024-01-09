@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ if .Title }}
+    <h1>{{ .Title }}</h1>
+    {{ if .Page.Params.hideDate }}
+    {{ else }}
+      {{ time.Format "January 2, 2006 (MST)" .Page.Lastmod.UTC }}
+      <br />
+    {{ end }}
+    <br />
+  {{ end }}
+  {{ .Content }}
+{{ end }}
