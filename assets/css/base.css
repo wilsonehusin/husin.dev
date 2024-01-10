@@ -40,7 +40,7 @@
       @apply inline-block dark:hidden;
     }
 
-    & .lucide-lightbulb {
+    & .lucide-sun {
       @apply hidden dark:inline-block;
     }
 
@@ -80,6 +80,15 @@
       &.menu-screen-show {
         z-index: 100;
         opacity: 100;
+      }
+    }
+
+    & .lucide-hamburger {
+      min-height: 2.5rem;
+      padding: 0.5rem;
+
+      &.show {
+        @apply bg-orange-dim hover:bg-orange text-fg1 hover:text-fg0 rounded;
       }
     }
   }

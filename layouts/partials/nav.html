@@ -25,7 +25,7 @@
     </button>
   </div>
   <button class="text-link flex md:hidden" onclick="toggleNavigationMenu()">
-    {{ with resources.Get "icon/grip.svg"}}
+    {{ with resources.Get "icon/menu.svg"}}
       {{ .Content | safeHTML }}
     {{ end }}
   </button>
@@ -35,7 +35,7 @@
         <a href="{{ .URL }}" class="text-link w-fit"><span>{{ .Title }}</span></a>
       {{ end }}
       <button class="h-fit text-link" title="Toggle light / dark theme." onclick="toggleDarkMode()">
-        {{ with resources.Get "icon/lightbulb.svg" }}
+        {{ with resources.Get "icon/sun.svg" }}
           {{ .Content | safeHTML }}
         {{ end }}
         {{ with resources.Get "icon/moon.svg"}}
