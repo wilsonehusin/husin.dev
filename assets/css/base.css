@@ -99,9 +99,9 @@
     @apply border-bg2;
 
     & .lucide {
-      min-height: 1.8rem;
-      min-width: 1.8rem;
-      padding: 0.2rem;
+      min-height: 1.6rem;
+      min-width: 1.6rem;
+      padding: 0.1rem;
       margin-right: 0.5rem;
     }
 
@@ -111,6 +111,10 @@
 
     &.testimonial .lucide {
       @apply text-red;
+    }
+
+    &.palette .lucide {
+      @apply text-orange;
     }
   }
 
