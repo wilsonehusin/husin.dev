@@ -13,7 +13,7 @@ hugo.linux
 /.hugo_build.lock
 
 # Generated TailwindCSS file
-assets/css/style.css
+assets/css/dist
 
 # Logs
 logs

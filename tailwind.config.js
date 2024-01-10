@@ -4,34 +4,13 @@ const defaults = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     './layouts/**/*.html',
-    './assets/css/*.css',
+    './assets/css/chroma.css',
     './assets/js/*.js',
     './assets/icon/*.svg',
   ],
   darkMode: 'class',
   theme: {
     extend: {
-      typography: ({ theme }) => ({
-        DEFAULT: {
-          css: {
-            '--tw-prose-body': 'var(--fg2)',
-            '--tw-prose-headings': 'var(--fg1)',
-            '--tw-prose-links': 'var(--orange)',
-            '--tw-prose-bold': 'var(--fg1)',
-            '--tw-prose-counters': 'var(--yellow)',
-            '--tw-prose-bullets': 'var(--yellow)',
-            '--tw-prose-hr': 'var(--yellow-dim)',
-            '--tw-prose-quotes': 'var(--fg3)',
-            '--tw-prose-quote-borders': 'var(--yellow-dim)',
-            '--tw-prose-captions': 'var(--fg4)',
-            '--tw-prose-code': 'var(--orange)',
-            '--tw-prose-pre-code': 'var(--fg3)',
-            '--tw-prose-pre-bg': 'var(--bg0)',
-            '--tw-prose-th-borders': 'var(--yellow-dim)',
-            '--tw-prose-td-borders': 'var(--bg3)',
-          },
-        },
-      }),
       colors: {
         // Gruvbox
         'bg-hard': 'var(--bg-hard)',
@@ -81,8 +60,8 @@ module.exports = {
       },
       fontFamily: {
         // modernfontstacks.com: Neo-Grotesque
-        neogrotesque: [
-          "Inter Variable",
+        neo: [
+          "InterVariable",
           "Inter",
           "Helvetica Neue",
           defaults.fontFamily.sans,
@@ -102,9 +81,45 @@ module.exports = {
           defaults.fontFamily.mono,
         ],
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': 'var(--fg2)',
+            '--tw-prose-headings': 'var(--fg1)',
+            '--tw-prose-links': 'var(--orange)',
+            '--tw-prose-bold': 'var(--fg1)',
+            '--tw-prose-counters': 'var(--yellow)',
+            '--tw-prose-bullets': 'var(--yellow)',
+            '--tw-prose-hr': 'var(--yellow-dim)',
+            '--tw-prose-quotes': 'var(--fg3)',
+            '--tw-prose-quote-borders': 'var(--yellow-dim)',
+            '--tw-prose-captions': 'var(--fg4)',
+            '--tw-prose-code': 'var(--orange)',
+            '--tw-prose-pre-code': 'var(--fg3)',
+            '--tw-prose-pre-bg': 'var(--bg0)',
+            '--tw-prose-th-borders': 'var(--yellow-dim)',
+            '--tw-prose-td-borders': 'var(--bg3)',
+            '--tw-prose-invert-body': 'var(--tw-prose-body)',
+            '--tw-prose-invert-headings': 'var(--tw-prose-headings)',
+            '--tw-prose-invert-links': 'var(--tw-prose-links)',
+            '--tw-prose-invert-bold': 'var(--tw-prose-bold)',
+            '--tw-prose-invert-counters': 'var(--tw-prose-counters)',
+            '--tw-prose-invert-bullets': 'var(--tw-prose-bullets)',
+            '--tw-prose-invert-hr': 'var(--tw-prose-hr)',
+            '--tw-prose-invert-quotes': 'var(--tw-prose-quotes)',
+            '--tw-prose-invert-quote-borders': 'var(--tw-prose-quote-borders)',
+            '--tw-prose-invert-captions': 'var(--tw-prose-captions)',
+            '--tw-prose-invert-code': 'var(--tw-prose-code)',
+            '--tw-prose-invert-pre-code': 'var(--tw-prose-pre-code)',
+            '--tw-prose-invert-pre-bg': 'var(--tw-prose-pre-bg)',
+            '--tw-prose-invert-th-borders': 'var(--tw-prose-th-borders)',
+            '--tw-prose-invert-td-borders': 'var(--tw-prose-td-borders)',
+          },
+        },
+      }),
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
 };

@@ -7,7 +7,7 @@ hugo-build: css-gen
   hugo --gc --minify
 
 css-gen:
-  pnpm tailwindcss -i assets/css/base.css -o assets/css/style.css --minify
+  pnpm tailwindcss -i assets/css/base.css -o assets/css/dist/style.css --minify
 
 css-watch:
-  pnpm tailwindcss -i assets/css/base.css -o assets/css/style.css --watch
+  pnpm tailwindcss -i assets/css/base.css -o assets/css/dist/style.css --watch

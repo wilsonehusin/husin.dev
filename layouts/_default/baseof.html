@@ -27,11 +27,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    {{ $stylesheets := slice "gruvbox" "chroma" "style" }}
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    {{ $stylesheets := slice "gruvbox" "chroma" "dist/style" }}
     {{ range $stylesheets }}
       {{ $path := fmt.Printf "css/%s.css" . }}
       {{ with resources.Get $path | minify | fingerprint }}
         <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
+      {{ end }}
+    {{ end }}
+
+    {{ $javascripts := slice "navigation-menu" }}
+    {{ range $javascripts }}
+      {{ $path := fmt.Printf "js/%s.js" . }}
+      {{ with resources.Get $path | minify | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
       {{ end }}
     {{ end }}
 
@@ -47,12 +58,12 @@
     <meta name="og:description" content="{{ $desc }}" />
 
     {{ with resources.Get "img/pp.webp" }}
-      {{ with .Resize "32x" | fingerprint "md5" }}
+      {{ with .Resize "32x" | fingerprint }}
         <link rel="icon" type="image/webp" href="{{ .RelPermalink }}"/>
       {{ end }}
     {{ end }}
     {{ block "image_preview" . }}
-      {{ $imgPreview := resources.Get "img/pp.webp" | fingerprint "md5" }}
+      {{ $imgPreview := resources.Get "img/pp.webp" | fingerprint }}
       <meta property="og:image" content="{{ $imgPreview.RelPermalink }}" />
       <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
     {{ end }}
@@ -74,14 +85,14 @@
     {{ end }}
   </head>
 
-  <body class="p-4">
-    {{ partial "nav/full.html" . }}
+  <body class="px-4 bg-bg-hard text-default pb-8">
+    {{ partial "nav.html" . }}
     {{ block "main" . }}
     {{ end }}
     {{ block "footer" . }}
     {{ end }}
 
-    {{ $instantpage := resources.Get "js/instantpage.js" | minify }}
-    <script src="{{ $instantpage.RelPermalink }}" type="module"></script>
+    {{ $instantpage := resources.Get "js/instantpage.js" | minify | fingerprint }}
+    <script src="{{ $instantpage.RelPermalink }}" integrity="{{ $instantpage.Data.Integrity }}" type="module"></script>
   </body>
 </html>

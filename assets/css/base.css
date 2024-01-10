@@ -6,11 +6,11 @@
 
 @layer components {
   .text-default {
-    color: var(--fg2);
+    @apply text-fg2
   }
 
   .text-link {
-    @apply text-fg1;
+    @apply text-fg3;
   }
   .group:hover .text-link,
   .text-link:hover {
@@ -18,53 +18,90 @@
   }
 
   body {
-    @apply transition text-default bg-bg-hard;
+    @apply transition;
   }
 
-  nav .lucide {
-    min-height: 24px;
-    min-width: 24px;
+  /* Navigation bar */
+  nav {
+    /* Lucide icons */
+    & .lucide {
+      min-height: 1.4rem;
 
-    &:hover {
+      &:hover {
+        fill: currentColor;
+      }
+    }
+
+    & .text-link:hover .lucide {
       fill: currentColor;
     }
-  }
 
-  .text-link:hover .lucide {
-    fill: currentColor;
-  }
-
-  nav .lucide-moon {
-    @apply inline-block dark:hidden;
-  }
-
-  nav .lucide-lightbulb {
-    @apply hidden dark:inline-block;
-  }
-
-  /* Navigation items */
-  nav a.text-link {
-    /* Offsetting the underline */
-    margin-bottom: -6px;
-
-    &:after {
-      content: "";
-      background: transparent;
-      display: block;
-      height: 6px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: -8px;
-      transition:
-        width 0.1s ease,
-        background-color 0.1s ease;
-      width: 0px;
+    & .lucide-moon {
+      @apply inline-block dark:hidden;
     }
 
-    &:hover:after {
-      width: 100%;
-      opacity: 50%;
-      @apply bg-yellow-dim;
+    & .lucide-lightbulb {
+      @apply hidden dark:inline-block;
+    }
+
+    /* Navigation menu items */
+    & a.text-link {
+      &:after {
+        content: "";
+        background: transparent;
+        display: block;
+        height: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -8px;
+        transition:
+          width 0.1s ease,
+          background-color 0.1s ease;
+        width: 0px;
+      }
+
+      &:hover:after {
+        width: 100%;
+        opacity: 50%;
+        @apply bg-yellow-dim;
+      }
+    }
+
+    /* Mobile menu */
+    & .menu-screen {
+      z-index: 0;
+      height: calc(100vh - 80px);
+      opacity: 0;
+
+      & .lucide {
+        min-height: 2rem;
+      }
+
+      &.menu-screen-show {
+        z-index: 100;
+        opacity: 100;
+      }
+    }
+  }
+
+
+  /* Callout boxes */
+  .callout  {
+    @apply border-bg2;
+
+    & .lucide {
+      min-height: 1.8rem;
+      min-width: 1.8rem;
+      padding: 0.2rem;
+      margin-right: 0.5rem;
+    }
+
+    &.info .lucide {
+      @apply text-yellow;
+    }
+
+    &.testimonial .lucide {
+      @apply text-red;
     }
   }
 
@@ -72,6 +109,27 @@
   .prose {
     & pre {
       @apply border rounded border-bg1 hover:border-bg4;
+    }
+    & .callout > p {
+      @apply my-0;
+    }
+
+    & h4 {
+      @apply font-black uppercase;
+    }
+    & h5 {
+      @apply font-extrabold uppercase;
+    }
+    & h6 {
+      @apply font-semibold uppercase;
+    }
+
+    & a {
+      @apply decoration-yellow-dim underline-offset-2 transition-colors;
+
+      &:hover {
+        @apply text-orange-dim;
+      }
     }
   }
 }

@@ -1,12 +1,13 @@
 {{ define "main" }}
   <article class="max-w-7xl mx-auto">
-    <header class="">
-      <h1 class="text-6xl font-bold tracking-tighter font-industrial">
-        {{ .Page.Title }}
+    <header class="my-4">
+      <h1 class="text-6xl font-bold tracking-tighter font-industrial text-fg1 leading-none">
+        {{- .Page.Title -}}
       </h1>
     </header>
-    <div class="prose font-neogrotesque">
-      {{ .Content }}
+    <div class="prose font-neo text-sm px-1 md:ml-8">
+      <hr />
+      {{- .Content }}
     </div>
   </article>
 {{ end }}
