@@ -1,39 +1,42 @@
-{{ define "head" }}
-{{ end }}
-
 {{ define "main" }}
-  {{ .Content }}
-  {{ if .Page.Params.expandChildren }}
-    {{ range sort (.Pages) "Lastmod" "desc" }}
-      <article>
-        <h2
-          id="{{ .File.BaseFileName | urlize }}"
-          style="display: inline-block; vertical-align: middle;"
-        >
-          {{ .Title }}
-          <a href="#{{ .File.BaseFileName | urlize }}">#</a>
-          {{ partial "share.html" .RelPermalink -}}
+  <main class="max-w-7xl mx-auto">
+    <article class="mb-8">
+      <header class="my-4">
+        <h1 class="text-4xl font-bold tracking-tighter font-industrial text-fg1 leading-none">
+          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
+        </h1>
+      </header>
+      {{- if .Content }}
+        <div class="prose font-neo text-sm px-1 md:ml-8">
+          <hr />
+          {{- .Content }}
+        </div>
+      {{- end }}
+      <hr class="text-yellow max-w-[48rem]" />
+    </article>
+    {{ range (.Pages.GroupByPublishDate "2006") }}
+      {{ if not (eq .Key "0001") }}
+        <h2 id="{{ .Key }}" class="text-xl text-fg3 hover:text-fg1">
+          {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
-        {{ .Content }}
-      </article>
-    {{ end }}
-  {{ else }}
-    {{ range (.Pages.GroupByLastmod "2006") }}
-      <table class="dated-entries">
-        <thead>
-          <td colspan="2">
-            <h2 id="{{ .Key }}">{{ .Key }} <a href="#{{ .Key }}">¶</a></h2>
-          </td>
-        </thead>
-        <tbody>
-          {{ range sort (.Pages) "Lastmod" "desc" }}
-            <tr>
-              <td>{{ time.Format "Jan 2" .Lastmod.UTC }}</td>
-              <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
-            </tr>
+      {{- end }}
+        <div class="text-fg4 max-w-[48rem]">
+          {{ range sort (.Pages) "PublishDate" "desc" }}
+            <a href="{{ .RelPermalink }}" class="flex justify-between group w-full">
+              {{- if not .PublishDate.IsZero }}
+                <span class="group-hover:text-fg2 w-[7ch] font-light text-right pr-2 flex-shrink">
+                  {{- time.Format "Jan 2" .PublishDate.UTC -}}
+                </span>
+              {{ end }}
+              <div class="flex justify-between flex-grow">
+                <span class="group-hover:underline group-hover:text-fg0 font-semibold decoration-yellow-dim">
+                  {{ .Title }}
+                </span>
+              </div>
+            </a>
           {{ end }}
-        </tbody>
+        </div>
       </table>
     {{ end }}
-  {{ end }}
+  </main>
 {{ end }}

@@ -328,7 +328,7 @@
 }
 /* GenericOutput */
 .chroma .go {
-  color: var(--bg2);
+  color: var(--fg4);
 }
 /* GenericPrompt */
 .chroma .gp {

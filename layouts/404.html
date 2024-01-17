@@ -1,0 +1,16 @@
+{{- define "title" }}
+  Not found | {{ .Site.Title }}
+{{- end }}
+
+
+{{ define "main" }}
+  <main class="flex flex-col gap-16 items-center justify-center max-w-7xl mx-auto">
+    <div class="text-center">
+      <h1 class="text-6xl">¯\_(ツ)_/¯</h1>
+      <h2 class="text-2xl text-fg4">Can't find what you're looking for</h2>
+    </div>
+    <a href="{{ "" | relURL }}" class="group rounded-md p-2 text-fg4 hover:text-fg1 border border-yellow hover:border-yellow-dim">
+      <span class="group-hover:text-orange">🡨</span> Home
+    </a>
+  </main>
+{{ end }}

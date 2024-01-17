@@ -1,98 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <script>
       function setDarkMode(isWanted) {
-        if (Boolean(isWanted))
-          document.documentElement.classList.add('dark')
-        else
-          document.documentElement.classList.remove('dark')
+        if (Boolean(isWanted)) document.documentElement.classList.add("dark");
+        else document.documentElement.classList.remove("dark");
       }
 
       function evalDarkMode() {
         const invert = localStorage.invertTheme === "true";
-        const prefer = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const prefer = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         const useDark = invert ? !prefer : prefer;
-        setDarkMode(useDark)
+        setDarkMode(useDark);
       }
 
       function toggleDarkMode() {
-        localStorage.invertTheme = localStorage.invertTheme === "true" ? "false" : "true"
-        evalDarkMode()
+        localStorage.invertTheme =
+          localStorage.invertTheme === "true" ? "false" : "true";
+        evalDarkMode();
       }
 
-      evalDarkMode()
+      evalDarkMode();
     </script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    {{ $stylesheets := slice "gruvbox" "chroma" "dist/style" }}
-    {{ range $stylesheets }}
-      {{ $path := fmt.Printf "css/%s.css" . }}
-      {{ with resources.Get $path | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
-      {{ end }}
-    {{ end }}
-
-    {{ $javascripts := slice "navigation-menu" }}
-    {{ range $javascripts }}
-      {{ $path := fmt.Printf "js/%s.js" . }}
-      {{ with resources.Get $path | minify | fingerprint }}
-        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
-      {{ end }}
-    {{ end }}
+    {{ $stylesheets := slice "gruvbox" "chroma" "dist/style" }} {{ range
+    $stylesheets }} {{ $path := fmt.Printf "css/%s.css" . }} {{ with
+    resources.Get $path | minify | fingerprint }}
+    <link
+      rel="stylesheet"
+      href="{{ .RelPermalink }}"
+      integrity="{{ .Data.Integrity }}"
+    />
+    {{ end }} {{ end }} {{ $javascripts := slice "navigation-menu" }} {{ range
+    $javascripts }} {{ $path := fmt.Printf "js/%s.js" . }} {{ with resources.Get
+    $path | minify | fingerprint }}
+    <script
+      src="{{ .RelPermalink }}"
+      integrity="{{ .Data.Integrity }}"
+    ></script>
+    {{ end }} {{ end }}
 
     <!-- Search Engine Optimization (SEO) related tags -->
     <link rel="canonical" href="{{ .Permalink }}" />
     <meta name="og:url" href="{{ .Permalink }}" />
 
-    {{ $desc := site.Params.Description }}
-    {{- if .Params.Description }}
-      {{ $desc = .Params.Description }}
-    {{- end }}
+    {{ $desc := site.Params.Description }} {{- if .Params.Description }} {{
+    $desc = .Params.Description }} {{- end }}
     <meta name="description" content="{{ $desc }}" />
     <meta name="og:description" content="{{ $desc }}" />
 
-    {{ with resources.Get "img/pp.webp" }}
-      {{ with .Resize "32x" | fingerprint }}
-        <link rel="icon" type="image/webp" href="{{ .RelPermalink }}"/>
-      {{ end }}
-    {{ end }}
-    {{ block "image_preview" . }}
-      {{ $imgPreview := resources.Get "img/pp.webp" | fingerprint }}
-      <meta property="og:image" content="{{ $imgPreview.RelPermalink }}" />
-      <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
+    {{ with resources.Get "img/pp.webp" }} {{ with .Resize "32x" | fingerprint
+    }}
+    <link rel="icon" type="image/webp" href="{{ .RelPermalink }}" />
+    {{ end }} {{ end }} {{ block "image_preview" . }} {{ $imgPreview :=
+    resources.Get "img/pp.webp" | fingerprint }}
+    <meta property="og:image" content="{{ $imgPreview.RelPermalink }}" />
+    <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
     {{ end }}
 
     <title>
-      {{ block "title" . }}
-        {{- if .Params.hide_site_title -}}
-          {{ .Page.Title }}
-        {{- else if .Page.Title -}}
-          {{ .Page.Title }} |
-          {{ .Site.Title }}
-        {{- else -}}
-          {{ .Site.Title }}
-        {{- end -}}
-      {{ end }}
+      {{ block "title" . }} {{- if .Params.hide_site_title -}} {{ .Page.Title }}
+      {{- else if .Page.Title -}} {{ .Page.Title }} | {{ .Site.Title }} {{- else
+      -}} {{ .Site.Title }} {{- end -}} {{ end }}
     </title>
 
-    {{ block "head" . }}
-    {{ end }}
+    {{ block "head" . }} {{ end }}
   </head>
 
   <body class="px-4 bg-bg-hard text-default pb-8">
-    {{ partial "nav.html" . }}
-    {{ block "main" . }}
-    {{ end }}
-    {{ block "footer" . }}
-    {{ end }}
-
-    {{ $instantpage := resources.Get "js/instantpage.js" | minify | fingerprint }}
-    <script src="{{ $instantpage.RelPermalink }}" integrity="{{ $instantpage.Data.Integrity }}" type="module"></script>
+    {{ partial "nav.html" . }} {{ block "main" . }} {{ end }} {{ block "footer"
+    . }} {{ end }} {{ $instantpage := resources.Get "js/instantpage.js" | minify
+    | fingerprint }}
+    <script
+      src="{{ $instantpage.RelPermalink }}"
+      integrity="{{ $instantpage.Data.Integrity }}"
+      type="module"
+    ></script>
   </body>
 </html>

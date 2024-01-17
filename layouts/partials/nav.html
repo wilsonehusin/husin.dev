@@ -1,46 +1,53 @@
-<nav class="relative flex justify-between items-center gap-4 text-center pt-4 pb-8 text-sm max-w-7xl mx-auto overflow-hidden bg-bg-hard transition">
+<nav
+  class="relative flex justify-between items-center gap-4 text-center pt-4 pb-8 text-sm max-w-7xl mx-auto overflow-hidden bg-bg-hard transition"
+>
   <a href="/" class="flex items-center gap-2 mr-2 font-bold group text-lg">
-    {{ with resources.Get "img/pp.webp" }}
-      {{ with .Resize "128x" | fingerprint }}
-        <img src="{{ .RelPermalink }}"
-          alt="Profile picture icon"
-          class="h-8 rounded-[1em] group-hover:rounded-sm duration-150" />
-      {{ end }}
-    {{ end }}
-    <span class="text-link duration-150">
-      {{ .Site.Title }}
-    </span>
+    {{ with resources.Get "img/pp.webp" }} {{ with .Resize "128x" | fingerprint
+    }}
+    <img
+      src="{{ .RelPermalink }}"
+      alt="Profile picture icon"
+      class="h-8 rounded-[1em] group-hover:rounded-sm duration-150"
+    />
+    {{ end }} {{ end }}
+    <span class="text-link duration-150"> {{ .Site.Title }} </span>
   </a>
-  <div class="menu menu-top hidden md:flex gap-1 items-center ml-auto font-medium">
+  <div
+    class="menu menu-top hidden md:flex gap-1 items-center ml-auto font-medium"
+  >
     {{ range $i, $e := .Site.Menus.main }}
-      <a href="{{ .URL }}" class="px-2 text-link"><span>{{ .Title }}</span></a>
+    <a href="{{ .URL }}" class="px-2 text-link"><span>{{ .Title }}</span></a>
     {{ end }}
-    <button class="h-fit text-link" title="Toggle light / dark theme." onclick="toggleDarkMode()">
-      {{ with resources.Get "icon/lightbulb.svg" }}
-        {{ .Content | safeHTML }}
-      {{ end }}
-      {{ with resources.Get "icon/moon.svg"}}
-        {{ .Content | safeHTML }}
-      {{ end }}
+    <button
+      class="h-fit text-link"
+      title="Toggle light / dark theme."
+      onclick="toggleDarkMode()"
+    >
+      {{ with resources.Get "icon/sun.svg" }} {{ .Content | safeHTML }} {{ end
+      }} {{ with resources.Get "icon/moon.svg"}} {{ .Content | safeHTML }} {{
+      end }}
     </button>
   </div>
   <button class="text-link flex md:hidden" onclick="toggleNavigationMenu()">
-    {{ with resources.Get "icon/menu.svg"}}
-      {{ .Content | safeHTML }}
-    {{ end }}
+    {{ with resources.Get "icon/menu.svg"}} {{ .Content | safeHTML }} {{ end }}
   </button>
-  <div class="menu menu-screen md:hidden transition absolute w-full bg-bg-hard rounded top-16 flex items-center justify-center">
-    <div class="font-medium text-xl flex flex-col gap-4 justify-center items-center">
+  <div
+    class="menu menu-screen md:hidden transition absolute w-full bg-bg-hard rounded top-16 flex items-center justify-center"
+  >
+    <div
+      class="font-medium text-xl flex flex-col gap-4 justify-center items-center"
+    >
       {{ range $i, $e := .Site.Menus.main }}
-        <a href="{{ .URL }}" class="text-link w-fit"><span>{{ .Title }}</span></a>
+      <a href="{{ .URL }}" class="text-link w-fit"><span>{{ .Title }}</span></a>
       {{ end }}
-      <button class="h-fit text-link" title="Toggle light / dark theme." onclick="toggleDarkMode()">
-        {{ with resources.Get "icon/sun.svg" }}
-          {{ .Content | safeHTML }}
-        {{ end }}
-        {{ with resources.Get "icon/moon.svg"}}
-          {{ .Content | safeHTML }}
-        {{ end }}
+      <button
+        class="h-fit text-link"
+        title="Toggle light / dark theme."
+        onclick="toggleDarkMode()"
+      >
+        {{ with resources.Get "icon/sun.svg" }} {{ .Content | safeHTML }} {{ end
+        }} {{ with resources.Get "icon/moon.svg"}} {{ .Content | safeHTML }} {{
+        end }}
       </button>
     </div>
   </div>

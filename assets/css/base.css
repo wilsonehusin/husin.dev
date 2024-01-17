@@ -6,7 +6,7 @@
 
 @layer components {
   .text-default {
-    @apply text-fg2
+    @apply text-fg2;
   }
 
   .text-link {
@@ -93,14 +93,29 @@
     }
   }
 
+  /* Tag keywords */
+  .tags {
+    & .tag-golang {
+      @apply text-blue;
+    }
+    & .tag-meta {
+      @apply text-orange;
+    }
+    & .tag-projects {
+      @apply text-aqua;
+    }
+    & .tag-management {
+      @apply text-purple;
+    }
+  }
 
   /* Callout boxes */
-  .callout  {
+  .callout {
     @apply border-bg2;
 
     & .lucide {
-      min-height: 1.6rem;
-      min-width: 1.6rem;
+      min-height: 1.5rem;
+      min-width: 1.5rem;
       padding: 0.1rem;
       margin-right: 0.5rem;
     }
@@ -116,6 +131,45 @@
     &.palette .lucide {
       @apply text-orange;
     }
+
+    &.play .lucide {
+      @apply text-blue;
+    }
+
+    &.coins .lucide {
+      @apply text-green;
+    }
+
+    &.timer .lucide {
+      @apply text-aqua;
+    }
+  }
+
+  /* Heading anchors */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:has(> a.anchor) {
+      & > .anchor {
+        display: none;
+      }
+      &:hover > a.anchor {
+        display: inline-block;
+        @apply text-orange no-underline;
+      }
+    }
+  }
+
+  /* External links */
+  a[href^="http://"]:after, 
+  a[href^="https://"]:after
+  {
+    content: "🡭";
+    display: inline-block;
+    transform: scale(0.8);
   }
 
   /* Rendered markdown content */
@@ -123,8 +177,7 @@
     & pre {
       @apply border rounded border-bg1 hover:border-bg4;
     }
-    & .callout > p {
-      @apply my-0;
+    & .callout {
     }
 
     & h4 {
