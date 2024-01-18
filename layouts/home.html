@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <article class="max-w-7xl mx-auto md:flex gap-8">
+    <div class="prose font-neo text-sm px-1">
+      {{- .Content }}
+    </div>
+    <div class="mx-auto mt-8 md:m-0 max-w-[600px]">
+      {{ with resources.Get "img/portrait.webp" }}
+        {{ with .Resize "650x webp q90" | fingerprint }}
+          <img class="rounded-xl" src="{{ .RelPermalink }}" alt="Self portrait of {{ site.Title }}." />
+        {{ end }}
+      {{ end }}
+    </div>
+  </article>
+{{ end }}

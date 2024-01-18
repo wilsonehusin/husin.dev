@@ -7,9 +7,9 @@
       {{- .Page.Title -}}
     </h1>
     {{- if .Page.Description }}
-    <h3 class="not-prose text-fg4 font-medium mt-4">
-      {{- .Page.Description -}}
-    </h3>
+      <h3 class="not-prose text-fg4 font-medium mt-4">
+        {{- .Page.Description | markdownify -}}
+      </h3>
     {{- end }}
     <div class="flex items-center">
       <div class="flex tags justify-end items-center text-xs font-light my-2">
@@ -22,7 +22,7 @@
         </a>
         {{ end }}
       </div>
-      <hr class="text-yellow max-w-[48rem] flex-grow my-8 mx-1.5" />
+      <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
       <span class="not-prose text-fg4 text-xs font-semibold rounded-full">
         {{- time.Format "January 2, 2006" .Page.PublishDate.UTC -}}
       </span>

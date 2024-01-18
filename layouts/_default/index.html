@@ -1,3 +1,6 @@
-{{ define "main" }} {{ if .Page.Title }}
-<h1>{{ .Page.Title }}</h1>
-{{ end }} {{ .Content }} {{ end }}
+{{ define "main" }}
+  {{- if .Page.Title }}
+    <h1>{{ .Page.Title }}</h1>
+  {{- end }}
+  {{- .Content }}
+{{ end }}

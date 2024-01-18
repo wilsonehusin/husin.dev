@@ -31,54 +31,76 @@
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    {{ $stylesheets := slice "gruvbox" "chroma" "dist/style" }} {{ range
-    $stylesheets }} {{ $path := fmt.Printf "css/%s.css" . }} {{ with
-    resources.Get $path | minify | fingerprint }}
-    <link
-      rel="stylesheet"
-      href="{{ .RelPermalink }}"
-      integrity="{{ .Data.Integrity }}"
-    />
-    {{ end }} {{ end }} {{ $javascripts := slice "navigation-menu" }} {{ range
-    $javascripts }} {{ $path := fmt.Printf "js/%s.js" . }} {{ with resources.Get
-    $path | minify | fingerprint }}
-    <script
-      src="{{ .RelPermalink }}"
-      integrity="{{ .Data.Integrity }}"
-    ></script>
-    {{ end }} {{ end }}
+    {{ $stylesheets := slice "gruvbox" "chroma" "dist/style" }}
+    {{ range $stylesheets }}
+      {{ $path := fmt.Printf "css/%s.css" . }}
+      {{ with resources.Get $path | minify | fingerprint }}
+        <link
+          rel="stylesheet"
+          href="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+        />
+      {{ end }}
+    {{ end }}
+
+    {{ $javascripts := slice "navigation-menu" }}
+    {{ range $javascripts }}
+      {{ $path := fmt.Printf "js/%s.js" . }}
+      {{ with resources.Get $path | minify | fingerprint }}
+        <script
+          src="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+        ></script>
+      {{ end }}
+    {{ end }}
 
     <!-- Search Engine Optimization (SEO) related tags -->
     <link rel="canonical" href="{{ .Permalink }}" />
-    <meta name="og:url" href="{{ .Permalink }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:creator" content="@wilson" />
+    <meta name="twitter:site" content="husin.dev" />
 
-    {{ $desc := site.Params.Description }} {{- if .Params.Description }} {{
-    $desc = .Params.Description }} {{- end }}
-    <meta name="description" content="{{ $desc }}" />
-    <meta name="og:description" content="{{ $desc }}" />
+    {{ $desc := site.Params.Description }}
+    {{- if .Params.Description }}
+      {{ $desc = .Params.Description }}
+    {{- end }}
+    <meta property="description" content="{{ $desc }}" />
+    <meta property="og:description" content="{{ $desc }}" />
+    <meta name="twitter:description" content="{{ $desc }}" />
 
-    {{ with resources.Get "img/pp.webp" }} {{ with .Resize "32x" | fingerprint
-    }}
-    <link rel="icon" type="image/webp" href="{{ .RelPermalink }}" />
-    {{ end }} {{ end }} {{ block "image_preview" . }} {{ $imgPreview :=
-    resources.Get "img/pp.webp" | fingerprint }}
-    <meta property="og:image" content="{{ $imgPreview.RelPermalink }}" />
-    <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
+    {{ with resources.Get "img/pp.webp" }}
+      {{ with .Resize "32x" | fingerprint }}
+        <link rel="icon" type="image/webp" href="{{ .RelPermalink }}" />
+      {{ end }}
+    {{ end }}
+    {{ block "image_preview" . }}
+      {{ $imgPreview := resources.Get "img/pp.webp" | fingerprint }}
+      <meta property="og:image" content="{{ $imgPreview.RelPermalink }}" />
+      <meta property="og:image:alt" content="Profile picture of {{ site.Title }}" />
+      <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
     {{ end }}
 
     <title>
-      {{ block "title" . }} {{- if .Params.hide_site_title -}} {{ .Page.Title }}
-      {{- else if .Page.Title -}} {{ .Page.Title }} | {{ .Site.Title }} {{- else
-      -}} {{ .Site.Title }} {{- end -}} {{ end }}
+      {{ block "title" . }}
+        {{- if .Params.hide_site_title -}}
+          {{ .Page.Title }}
+        {{- else if .Page.Title -}}
+          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title }} | {{ .Site.Title }}
+        {{- else -}}
+          {{ .Site.Title }}
+        {{- end -}}
+      {{ end }}
     </title>
 
-    {{ block "head" . }} {{ end }}
+    {{ block "head" . }}{{ end }}
   </head>
 
   <body class="px-4 bg-bg-hard text-default pb-8">
-    {{ partial "nav.html" . }} {{ block "main" . }} {{ end }} {{ block "footer"
-    . }} {{ end }} {{ $instantpage := resources.Get "js/instantpage.js" | minify
-    | fingerprint }}
+    {{ partial "nav.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ block "footer" . }}{{ end }}
+    {{ $instantpage := resources.Get "js/instantpage.js" | minify | fingerprint }}
     <script
       src="{{ $instantpage.RelPermalink }}"
       integrity="{{ $instantpage.Data.Integrity }}"

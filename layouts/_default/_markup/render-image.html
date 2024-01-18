@@ -1,0 +1,7 @@
+{{- $img := .Page.Resources.Get .Destination }}
+{{- if $img }}
+  {{ $img = $img.Process "webp" | fingerprint }}
+  <p>
+    <img src="{{ $img.RelPermalink }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}"{{ end }} />
+  </p>
+{{- end }}

@@ -6,17 +6,14 @@
           {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
         </h1>
       </header>
-      {{- if .Content }}
-        <div class="prose font-neo text-sm px-1 md:ml-8">
-          <hr />
-          {{- .Content }}
-        </div>
-      {{- end }}
-      <hr class="text-yellow max-w-[48rem]" />
+      <div class="text-fg4 font-medium font-neo text-sm px-1 md:ml-8">
+        {{- .Content }}
+        <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
+      </div>
     </article>
     {{ range (.Pages.GroupByPublishDate "2006") }}
       {{ if not (eq .Key "0001") }}
-        <h2 id="{{ .Key }}" class="text-xl text-fg3 hover:text-fg1">
+        <h2 id="{{ .Key }}" class="font-serif text-xl text-fg3 hover:text-fg1">
           {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
       {{- end }}

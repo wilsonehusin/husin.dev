@@ -6,9 +6,11 @@
     >
       {{- .Page.Title -}}
     </h1>
+    {{- if .Page.Title }}
+      <hr class="text-yellow max-w-[48rem] flex-grow my-8 mx-1.5" />
+    {{- end }}
   </header>
   <div class="prose font-neo text-sm px-1 md:ml-8">
-    <hr />
     {{- .Content }}
   </div>
 </article>

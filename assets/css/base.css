@@ -177,8 +177,6 @@
     & pre {
       @apply border rounded border-bg1 hover:border-bg4;
     }
-    & .callout {
-    }
 
     & h4 {
       @apply font-black uppercase;
@@ -196,6 +194,10 @@
       &:hover {
         @apply text-orange-dim;
       }
+    }
+
+    & del {
+      @apply text-fg4;
     }
   }
 }
