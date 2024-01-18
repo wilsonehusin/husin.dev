@@ -6,7 +6,7 @@
           {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
         </h1>
       </header>
-      <div class="text-fg4 font-medium font-neo text-sm px-1 md:ml-8">
+      <div class="text-fg4 font-medium text-sm px-1 md:ml-8">
         {{- .Content }}
         <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
       </div>
@@ -15,7 +15,7 @@
       {{ range sort (.Pages) "Date" "desc" }}
         <a href="{{ .RelPermalink }}" class="group my-4">
           <div class="group-hover:text-fg3 flex justify-between items-baseline mb-2">
-            <span class="font-semibold font-neo">
+            <span class="font-semibold">
               @wilson
             </span>
             <span class="text-sm font-light font-industrial">
@@ -26,7 +26,7 @@
               {{- end }}
             </span>
           </div>
-          <article class="group-hover:text-fg1 mini flex-grow font-neo mr-auto">
+          <article class="group-hover:text-fg1 mini flex-grow mr-auto">
             {{- if .Title }}
               <h3 class="group-hover:text-fg0 font-semibold decoration-yellow-dim">
                 {{ .Title }}

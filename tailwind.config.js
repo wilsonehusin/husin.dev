@@ -61,10 +61,9 @@ module.exports = {
       },
       fontFamily: {
         // modernfontstacks.com: Neo-Grotesque
-        neo: [
+        sans: [
           "InterVariable",
           "Inter",
-          "Helvetica Neue",
           defaults.fontFamily.sans,
         ],
         // modernfontstacks.com: Industrial
