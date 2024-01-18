@@ -27,14 +27,14 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
+    
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    {{ $stylesheets := slice "gruvbox" "chroma" "dist/style" }}
-    {{ range $stylesheets }}
-      {{ $path := fmt.Printf "css/%s.css" . }}
-      {{ with resources.Get $path | minify | fingerprint }}
+    {{- $stylesheets := slice "gruvbox" "chroma" "dist/style" }}
+    {{- range $stylesheets }}
+      {{- $path := fmt.Printf "css/%s.css" . }}
+      {{- with resources.Get $path | minify | fingerprint -}}
         <link
           rel="stylesheet"
           href="{{ .RelPermalink }}"
@@ -43,10 +43,10 @@
       {{ end }}
     {{ end }}
 
-    {{ $javascripts := slice "navigation-menu" }}
-    {{ range $javascripts }}
-      {{ $path := fmt.Printf "js/%s.js" . }}
-      {{ with resources.Get $path | minify | fingerprint }}
+    {{- $javascripts := slice "navigation-menu" }}
+    {{- range $javascripts }}
+      {{- $path := fmt.Printf "js/%s.js" . }}
+      {{- with resources.Get $path | minify | fingerprint }}
         <script
           src="{{ .RelPermalink }}"
           integrity="{{ .Data.Integrity }}"
@@ -54,9 +54,13 @@
       {{ end }}
     {{ end }}
 
-    <script type="module">
-      import githubrelativeTimeElement from 'https://cdn.jsdelivr.net/npm/@github/relative-time-element@4/+esm'
-    </script>
+    {{- $jsVendors := slice
+      "https://cdn.jsdelivr.net/npm/@github/relative-time-element@4/dist/bundle.js"
+      "https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js"
+    }}
+    {{- range $jsVendors }}
+      {{- partial "vendor/js.html" . }}
+    {{ end }}
 
     <!-- Search Engine Optimization (SEO) related tags -->
     <link rel="canonical" href="{{ .Permalink }}" />
@@ -104,11 +108,5 @@
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ end }}
-    {{ $instantpage := resources.Get "js/instantpage.js" | minify | fingerprint }}
-    <script
-      src="{{ $instantpage.RelPermalink }}"
-      integrity="{{ $instantpage.Data.Integrity }}"
-      type="module"
-    ></script>
   </body>
 </html>

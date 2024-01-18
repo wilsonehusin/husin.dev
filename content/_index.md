@@ -1,4 +1,4 @@
-Hi, I'm Wilson, a software developer with side quests on 🍚 cooking, ☕️ coffee, and 🚲 bicycles in 🌉 San Francisco.
+Hi there! I'm Wilson, a software developer with side quests on 🍚 cooking, ☕️ coffee, and 🚲 bicycles in 🌉 San Francisco.
 
 [Read my professional profile ⇀](/about/)
 

@@ -1,0 +1,7 @@
+{{- with resources.GetRemote . | minify | fingerprint -}}
+  {{- with .Err -}}
+    {{- errorf "%s" . -}}
+  {{- else -}}
+    <script type="module" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+  {{- end -}}
+{{- end }}
