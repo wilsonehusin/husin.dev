@@ -11,20 +11,20 @@
         <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
       </div>
     </article>
-    {{ range (.Pages.GroupByPublishDate "2006") }}
+    {{ range (.Pages.GroupByDate "2006") }}
       {{ if not (eq .Key "0001") }}
         <h2 id="{{ .Key }}" class="font-serif text-xl text-fg3 hover:text-fg1">
           {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
       {{- end }}
-        <div class="text-fg4 max-w-[48rem]">
-          {{ range sort (.Pages) "PublishDate" "desc" }}
-            <a href="{{ .RelPermalink }}" class="flex justify-between group w-full">
-              {{- if not .PublishDate.IsZero }}
-                <span class="group-hover:text-fg2 w-[7ch] font-light text-right pr-2 flex-shrink">
-                  {{- time.Format "Jan 2" .PublishDate.UTC -}}
-                </span>
-              {{ end }}
+        <div class="text-fg4 max-w-[48rem] text-sm">
+          {{ range sort (.Pages) "Date" "desc" }}
+            <a href="{{ .RelPermalink }}" class="flex justify-between group w-full py-1">
+              <span class="group-hover:text-fg2 w-[7ch] font-light font-serif text-right pr-2 flex-shrink">
+                {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
+                  {{- time.Format "Jan 2" . -}}
+                {{- end }}
+              </span>
               <div class="flex justify-between flex-grow">
                 <span class="group-hover:underline group-hover:text-fg0 font-semibold decoration-yellow-dim">
                   {{ .Title }}
@@ -33,7 +33,6 @@
             </a>
           {{ end }}
         </div>
-      </table>
     {{ end }}
   </main>
 {{ end }}

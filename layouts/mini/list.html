@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <main class="max-w-7xl mx-auto">
+    <article class="mb-8">
+      <header class="my-4">
+        <h1 class="text-4xl font-bold tracking-tighter font-industrial text-fg1 leading-none">
+          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
+        </h1>
+      </header>
+      <div class="text-fg4 font-medium font-neo text-sm px-1 md:ml-8">
+        {{- .Content }}
+        <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
+      </div>
+    </article>
+    <div class="text-fg4 max-w-[56ch] flex flex-col md:ml-8">
+      {{ range sort (.Pages) "Date" "desc" }}
+        <a href="{{ .RelPermalink }}" class="group my-4">
+          <div class="group-hover:text-fg3 flex justify-between items-baseline mb-2">
+            <span class="font-semibold font-neo">
+              @wilson
+            </span>
+            <span class="text-sm font-light font-industrial">
+              {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
+                <relative-time datetime="{{- time.Format "2006-01-02T15:04:05Z0700" . -}}" prefix="">
+                  {{- time.Format "Jan 2, 2006" . -}}
+                </relative-time>
+              {{- end }}
+            </span>
+          </div>
+          <article class="group-hover:text-fg1 mini flex-grow font-serif mr-auto">
+            {{- if .Title }}
+              <h3 class="group-hover:text-fg0 font-semibold decoration-yellow-dim">
+                {{ .Title }}
+              </h3>
+            {{- end }}
+            <div class="prose prose-sm">
+              {{- .Content }}
+            </div>
+          </article>
+        </a>
+      {{- end }}
+    </div>
+  </main>
+{{ end }}

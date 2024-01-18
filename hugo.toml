@@ -13,7 +13,7 @@ enable = true
   description = "Personal site maintainted by Wilson Husin. Writing about software engineering within developer productivity, platform infrastructure, and web applications with perspectives of human-computer ergonomics and software performance."
 
 [frontmatter]
-  lastmod = [":git", "lastmod", "date"]
+  date = [":filename", "publishdate", ":default", ":fileModTime"]
 
 [menu]
 [[menu.main]]

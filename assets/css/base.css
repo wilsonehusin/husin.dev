@@ -70,7 +70,7 @@
     /* Mobile menu */
     & .menu-screen {
       z-index: 0;
-      height: calc(100vh - 80px);
+      height: calc(100vh - 20px);
       opacity: 0;
 
       & .lucide {
@@ -167,9 +167,8 @@
   a[href^="http://"]:after, 
   a[href^="https://"]:after
   {
-    content: "🡭";
-    display: inline-block;
-    transform: scale(0.8);
+    content: " 🡭";
+    @apply text-xs;
   }
 
   /* Rendered markdown content */
@@ -198,6 +197,15 @@
 
     & del {
       @apply text-fg4;
+    }
+  }
+
+  /* Mini posts */
+  article.mini > .prose.prose-sm {
+    @apply text-fg3;
+
+    & blockquote, p {
+      @apply my-1;
     }
   }
 }

@@ -54,6 +54,10 @@
       {{ end }}
     {{ end }}
 
+    <script type="module">
+      import githubrelativeTimeElement from 'https://cdn.jsdelivr.net/npm/@github/relative-time-element@4/+esm'
+    </script>
+
     <!-- Search Engine Optimization (SEO) related tags -->
     <link rel="canonical" href="{{ .Permalink }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
@@ -96,7 +100,7 @@
     {{ block "head" . }}{{ end }}
   </head>
 
-  <body class="px-4 bg-bg-hard text-default pb-8">
+  <body class="px-4 bg-bg-hard text-default pb-8 text-base">
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ end }}
