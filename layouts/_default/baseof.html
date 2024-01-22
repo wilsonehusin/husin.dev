@@ -27,7 +27,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
+
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
@@ -62,6 +62,7 @@
       {{- partial "vendor/js.html" . }}
     {{ end }}
 
+
     <!-- Search Engine Optimization (SEO) related tags -->
     <link rel="canonical" href="{{ .Permalink }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
@@ -85,16 +86,21 @@
     {{ block "image_preview" . }}
       {{ $imgPreview := resources.Get "img/pp.webp" | fingerprint }}
       <meta property="og:image" content="{{ $imgPreview.RelPermalink }}" />
-      <meta property="og:image:alt" content="Profile picture of {{ site.Title }}" />
+      <meta
+        property="og:image:alt"
+        content="Profile picture of {{ site.Title }}"
+      />
       <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
     {{ end }}
+
 
     <title>
       {{ block "title" . }}
         {{- if .Params.hide_site_title -}}
           {{ .Page.Title }}
         {{- else if .Page.Title -}}
-          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title }} | {{ .Site.Title }}
+          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title }} |
+          {{ .Site.Title }}
         {{- else -}}
           {{ .Site.Title }}
         {{- end -}}

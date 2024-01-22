@@ -2,6 +2,10 @@
   {{- with .Err -}}
     {{- errorf "%s" . -}}
   {{- else -}}
-    <script type="module" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+    <script
+      type="module"
+      src="{{ .RelPermalink }}"
+      integrity="{{ .Data.Integrity }}"
+    ></script>
   {{- end -}}
 {{- end }}

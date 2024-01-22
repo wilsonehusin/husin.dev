@@ -27,13 +27,13 @@
       {{- with resources.Get "icon/sun.svg" }}
         {{- .Content | safeHTML }}
       {{- end }}
-      {{- with resources.Get "icon/moon.svg"}}
+      {{- with resources.Get "icon/moon.svg" }}
         {{- .Content | safeHTML }}
       {{- end }}
     </button>
   </div>
   <button class="text-link flex md:hidden" onclick="toggleNavigationMenu()">
-    {{ with resources.Get "icon/menu.svg"}} {{ .Content | safeHTML }} {{ end }}
+    {{ with resources.Get "icon/menu.svg" }}{{ .Content | safeHTML }}{{ end }}
   </button>
   <div
     class="menu menu-screen md:hidden transition absolute w-full bg-bg-hard rounded top-16 flex items-center justify-center"
@@ -52,7 +52,7 @@
         {{- with resources.Get "icon/sun.svg" }}
           {{- .Content | safeHTML }}
         {{- end }}
-        {{- with resources.Get "icon/moon.svg"}}
+        {{- with resources.Get "icon/moon.svg" }}
           {{- .Content | safeHTML }}
         {{- end }}
       </button>

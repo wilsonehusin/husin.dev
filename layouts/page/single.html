@@ -1,17 +1,17 @@
 {{ define "main" }}
-<article class="max-w-7xl mx-auto">
-  <header class="my-4">
-    <h1
-      class="text-6xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
-    >
-      {{- .Page.Title -}}
-    </h1>
-    {{- if .Page.Title }}
-      <hr class="text-yellow max-w-[48rem] flex-grow my-8 mx-1.5" />
-    {{- end }}
-  </header>
-  <div class="prose text-sm px-1 md:ml-8">
-    {{- .Content }}
-  </div>
-</article>
+  <article class="max-w-7xl mx-auto">
+    <header class="my-4">
+      <h1
+        class="text-6xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
+      >
+        {{- .Page.Title -}}
+      </h1>
+      {{- if .Page.Title }}
+        <hr class="text-yellow max-w-[48rem] flex-grow my-8 mx-1.5" />
+      {{- end }}
+    </header>
+    <div class="prose text-sm px-1 md:ml-8">
+      {{- .Content }}
+    </div>
+  </article>
 {{ end }}

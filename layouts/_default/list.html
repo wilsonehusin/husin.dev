@@ -2,7 +2,9 @@
   <main class="max-w-7xl mx-auto">
     <article class="mb-8">
       <header class="my-4">
-        <h1 class="text-4xl font-bold tracking-tighter font-industrial text-fg1 leading-none">
+        <h1
+          class="text-4xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
+        >
           {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
         </h1>
       </header>
@@ -17,22 +19,29 @@
           {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
       {{- end }}
-        <div class="text-fg4 max-w-[48rem] text-sm">
-          {{ range sort (.Pages) "Date" "desc" }}
-            <a href="{{ .RelPermalink }}" class="flex justify-between group w-full py-1">
-              <span class="group-hover:text-fg2 w-[7ch] font-light font-serif text-right pr-2 flex-shrink">
-                {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
-                  {{- time.Format "Jan 2" . -}}
-                {{- end }}
+      <div class="text-fg4 max-w-[48rem] text-sm">
+        {{ range sort (.Pages) "Date" "desc" }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="flex justify-between group w-full py-1"
+          >
+            <span
+              class="group-hover:text-fg2 w-[7ch] font-light font-serif text-right pr-2 flex-shrink"
+            >
+              {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
+                {{- time.Format "Jan 2" . -}}
+              {{- end }}
+            </span>
+            <div class="flex justify-between flex-grow">
+              <span
+                class="group-hover:underline group-hover:text-fg0 font-semibold decoration-yellow-dim"
+              >
+                {{ .Title }}
               </span>
-              <div class="flex justify-between flex-grow">
-                <span class="group-hover:underline group-hover:text-fg0 font-semibold decoration-yellow-dim">
-                  {{ .Title }}
-                </span>
-              </div>
-            </a>
-          {{ end }}
-        </div>
+            </div>
+          </a>
+        {{ end }}
+      </div>
     {{ end }}
   </main>
 {{ end }}

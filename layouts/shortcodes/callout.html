@@ -1,6 +1,7 @@
 {{ $selected := .Get "class" }}
 {{ $icon := resources.Get (fmt.Printf "icon/callout/%s.svg" (or $selected "default")) | minify | fingerprint }}
 
+
 <div
   class="callout no-prose flex items-start py-2 px-4 rounded-md shadow bg-bg-soft border-2 {{ $selected -}}"
 >

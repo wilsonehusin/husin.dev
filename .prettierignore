@@ -1,2 +1,2 @@
-layouts/**/*.html
+layouts/_default/_markup/render-heading.html
 public

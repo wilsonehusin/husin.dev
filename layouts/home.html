@@ -6,7 +6,11 @@
     <div class="mx-auto mt-8 md:m-0 max-w-[600px]">
       {{ with resources.Get "img/portrait.webp" }}
         {{ with .Resize "700x webp q90" | fingerprint }}
-          <img class="rounded-xl" src="{{ .RelPermalink }}" alt="Self portrait of {{ site.Title }}." />
+          <img
+            class="rounded-xl"
+            src="{{ .RelPermalink }}"
+            alt="Self portrait of {{ site.Title }}."
+          />
         {{ end }}
       {{ end }}
     </div>
