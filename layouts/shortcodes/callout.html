@@ -3,7 +3,7 @@
 
 
 <div
-  class="callout no-prose {{ $selected -}} flex items-start rounded-md border-2 bg-bg-soft px-4 py-2 shadow"
+  class="callout no-prose flex items-start rounded-md border-2 bg-bg-soft px-4 py-2 shadow {{ $selected }}"
 >
   {{- $icon.Content | safeHTML }}
   <article class="prose prose-sm">{{- .Inner | markdownify -}}</article>
