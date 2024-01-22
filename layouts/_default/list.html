@@ -26,17 +26,17 @@
             class="group flex w-full justify-between py-1"
           >
             <span
-              class="w-[7ch] flex-shrink pr-2 text-right font-serif font-light group-hover:text-fg2"
+              class="w-[7ch] shrink-0 pr-2 text-right font-serif font-light group-hover:text-fg2"
             >
               {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
                 {{- time.Format "Jan 2" . -}}
               {{- end }}
             </span>
-            <div class="flex flex-grow justify-between">
+            <div class="list-element flex flex-grow justify-between">
               <span
                 class="font-semibold decoration-yellow-dim group-hover:text-fg0 group-hover:underline"
               >
-                {{ .Title }}
+                {{ .Title | markdownify }}
               </span>
             </div>
           </a>

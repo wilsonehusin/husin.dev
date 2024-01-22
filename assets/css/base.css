@@ -150,6 +150,10 @@
     }
   }
 
+  .list-element code {
+    @apply text-bg4 group-hover:text-fg2;
+  }
+
   h1,
   h2,
   h3,
