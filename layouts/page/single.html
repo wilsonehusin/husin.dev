@@ -1,16 +1,16 @@
 {{ define "main" }}
-  <article class="max-w-7xl mx-auto">
+  <article class="mx-auto max-w-7xl">
     <header class="my-4">
       <h1
-        class="text-6xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
+        class="font-industrial text-6xl font-bold leading-none tracking-tighter text-fg1"
       >
         {{- .Page.Title -}}
       </h1>
       {{- if .Page.Title }}
-        <hr class="text-yellow max-w-[48rem] flex-grow my-8 mx-1.5" />
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow" />
       {{- end }}
     </header>
-    <div class="prose text-sm px-1 md:ml-8">
+    <div class="prose px-1 text-sm md:ml-8">
       {{- .Content }}
     </div>
   </article>

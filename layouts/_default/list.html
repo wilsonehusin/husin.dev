@@ -1,16 +1,16 @@
 {{ define "main" }}
-  <main class="max-w-7xl mx-auto">
+  <main class="mx-auto max-w-7xl">
     <article class="mb-8">
       <header class="my-4">
         <h1
-          class="text-4xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
+          class="font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1"
         >
           {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
         </h1>
       </header>
-      <div class="text-fg4 font-medium text-sm px-1 md:ml-8">
+      <div class="px-1 text-sm font-medium text-fg4 md:ml-8">
         {{- .Content }}
-        <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
       </div>
     </article>
     {{ range (.Pages.GroupByDate "2006") }}
@@ -19,22 +19,22 @@
           {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
       {{- end }}
-      <div class="text-fg4 max-w-[48rem] text-sm">
+      <div class="max-w-[48rem] text-sm text-fg4">
         {{ range sort (.Pages) "Date" "desc" }}
           <a
             href="{{ .RelPermalink }}"
-            class="flex justify-between group w-full py-1"
+            class="group flex w-full justify-between py-1"
           >
             <span
-              class="group-hover:text-fg2 w-[7ch] font-light font-serif text-right pr-2 flex-shrink"
+              class="w-[7ch] flex-shrink pr-2 text-right font-serif font-light group-hover:text-fg2"
             >
               {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
                 {{- time.Format "Jan 2" . -}}
               {{- end }}
             </span>
-            <div class="flex justify-between flex-grow">
+            <div class="flex flex-grow justify-between">
               <span
-                class="group-hover:underline group-hover:text-fg0 font-semibold decoration-yellow-dim"
+                class="font-semibold decoration-yellow-dim group-hover:text-fg0 group-hover:underline"
               >
                 {{ .Title }}
               </span>

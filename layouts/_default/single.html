@@ -1,35 +1,35 @@
 {{ define "main" }}
-  <article class="max-w-7xl mx-auto">
-    <header class="mt-4 mb-2 md:ml-4 max-w-[64ch]">
+  <article class="mx-auto max-w-7xl">
+    <header class="mb-2 mt-4 max-w-[64ch] md:ml-4">
       <h1
-        class="md:-ml-2 text-4xl md:text-6xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
+        class="font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1 md:-ml-2 md:text-6xl"
       >
         {{- .Page.Title | markdownify -}}
       </h1>
       {{- if .Page.Description }}
-        <h3 class="not-prose text-fg4 font-medium mt-4">
+        <h3 class="not-prose mt-4 font-medium text-fg4">
           {{- .Page.Description | markdownify -}}
         </h3>
       {{- end }}
       <div class="flex items-center">
-        <div class="flex tags justify-end items-center text-xs font-light my-2">
+        <div class="tags my-2 flex items-center justify-end text-xs font-light">
           {{ range .GetTerms "tags" }}
             <a
               href="{{ .RelPermalink }}"
-              class="tag-{{ .LinkTitle }} text-xs px-0.5"
+              class="tag-{{ .LinkTitle }} px-0.5 text-xs"
             >
               #{{ .LinkTitle }}
             </a>
           {{ end }}
         </div>
-        <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
         <span
-          class="not-prose text-fg4 text-xs font-serif font-semibold rounded-full"
+          class="not-prose rounded-full font-serif text-xs font-semibold text-fg4"
         >
           {{- time.Format "January 2, 2006" .Page.Date.UTC -}}
         </span>
       </div>
     </header>
-    <div class="prose text-sm px-1 md:ml-8">{{- .Content }}</div>
+    <div class="prose px-1 text-sm md:ml-8">{{- .Content }}</div>
   </article>
 {{ end }}

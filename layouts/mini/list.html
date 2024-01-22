@@ -1,26 +1,26 @@
 {{ define "main" }}
-  <main class="max-w-7xl mx-auto">
+  <main class="mx-auto max-w-7xl">
     <article class="mb-8">
       <header class="my-4">
         <h1
-          class="text-4xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
+          class="font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1"
         >
           {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
         </h1>
       </header>
-      <div class="text-fg4 font-medium text-sm px-1 md:ml-8">
+      <div class="px-1 text-sm font-medium text-fg4 md:ml-8">
         {{- .Content }}
-        <hr class="text-yellow-dim max-w-[48rem] flex-grow my-8 mx-1.5" />
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
       </div>
     </article>
-    <div class="text-fg4 max-w-[56ch] flex flex-col md:ml-8">
+    <div class="flex max-w-[56ch] flex-col text-fg4 md:ml-8">
       {{ range sort (.Pages) "Date" "desc" }}
         <a href="{{ .RelPermalink }}" class="group my-4">
           <div
-            class="group-hover:text-fg3 flex justify-between items-baseline mb-2"
+            class="mb-2 flex items-baseline justify-between group-hover:text-fg3"
           >
             <span class="font-semibold"> @wilson </span>
-            <span class="text-sm font-light font-industrial">
+            <span class="font-industrial text-sm font-light">
               {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
                 <relative-time
                   datetime="{{- time.Format "2006-01-02T15:04:05Z0700" . -}}"
@@ -31,10 +31,10 @@
               {{- end }}
             </span>
           </div>
-          <article class="group-hover:text-fg1 mini flex-grow mr-auto">
+          <article class="mini mr-auto flex-grow group-hover:text-fg1">
             {{- if .Title }}
               <h3
-                class="group-hover:text-fg0 font-semibold decoration-yellow-dim"
+                class="font-semibold decoration-yellow-dim group-hover:text-fg0"
               >
                 {{ .Title }}
               </h3>

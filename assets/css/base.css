@@ -88,7 +88,7 @@
       padding: 0.5rem;
 
       &.show {
-        @apply bg-orange-dim hover:bg-orange text-bg-hard hover:text-bg-soft rounded;
+        @apply rounded bg-orange-dim text-bg-hard hover:bg-orange hover:text-bg-soft;
       }
     }
   }
@@ -189,7 +189,7 @@
   /* Rendered markdown content */
   .prose {
     & pre {
-      @apply border rounded border-bg1 hover:border-bg4;
+      @apply rounded border border-bg1 hover:border-bg4;
     }
 
     & h4 {
