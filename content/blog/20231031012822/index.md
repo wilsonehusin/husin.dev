@@ -3,8 +3,8 @@ title: "Execute a command as another user with `pkexec`"
 url: "til-pkexec"
 publishDate: "2023-10-31"
 tags:
-- til
-- linux
+  - til
+  - linux
 description: >-
   In the absence of sudo, `pkexec` is an alternate mechanism to gain privileges of another user, including root.
 ---
