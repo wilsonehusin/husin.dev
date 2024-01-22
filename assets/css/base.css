@@ -168,8 +168,7 @@
   a[href^="http://"]:after, 
   a[href^="https://"]:after
   {
-    content: " 🡭";
-    @apply text-xs;
+    content: "↗";
   }
 
   /* Rendered markdown content */
