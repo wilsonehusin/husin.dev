@@ -4,7 +4,7 @@
     <h1
       class="md:-ml-2 text-4xl md:text-6xl font-bold tracking-tighter font-industrial text-fg1 leading-none"
     >
-      {{- .Page.Title -}}
+      {{- .Page.Title | markdownify -}}
     </h1>
     {{- if .Page.Description }}
       <h3 class="not-prose text-fg4 font-medium mt-4">

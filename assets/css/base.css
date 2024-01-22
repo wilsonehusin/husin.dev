@@ -150,13 +150,20 @@
     }
   }
 
-  /* Heading anchors */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    & code {
+      @apply text-orange-dim;
+      &:before,
+      &:after {
+        content: "`";
+      }
+    }
+    /* Heading anchors */
     &:has(> a.anchor) {
       & > .anchor {
         display: none;

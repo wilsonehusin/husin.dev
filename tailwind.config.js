@@ -81,6 +81,7 @@ module.exports = {
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
+            // Colors
             "--tw-prose-body": "var(--fg2)",
             "--tw-prose-headings": "var(--fg1)",
             "--tw-prose-links": "var(--orange)",
@@ -111,6 +112,11 @@ module.exports = {
             "--tw-prose-invert-pre-bg": "var(--tw-prose-pre-bg)",
             "--tw-prose-invert-th-borders": "var(--tw-prose-th-borders)",
             "--tw-prose-invert-td-borders": "var(--tw-prose-td-borders)",
+
+            // Remove blockquotes quote wrapping.
+            "blockquote p:first-of-type::before": false,
+            "blockquote p:first-of-type::after": false,
+            "blockquote p": { fontWeight: "normal" },
           },
         },
       }),
