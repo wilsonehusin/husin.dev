@@ -15,7 +15,7 @@
     </article>
     {{ range (.Pages.GroupByDate "2006") }}
       {{ if not (eq .Key "0001") }}
-        <h2 id="{{ .Key }}" class="font-serif text-xl text-fg3 hover:text-fg1">
+        <h2 id="{{ .Key }}" class="mt-2 font-serif text-xl text-fg3 hover:text-fg1">
           {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
       {{- end }}
