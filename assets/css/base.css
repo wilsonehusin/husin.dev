@@ -114,6 +114,7 @@
     @apply border-bg2;
 
     & .lucide {
+      flex-shrink: 0;
       height: 1.5rem;
       width: 1.5rem;
       padding: 0.1rem;
