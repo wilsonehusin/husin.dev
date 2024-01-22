@@ -4,9 +4,10 @@ const defaults = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     "./layouts/**/*.html",
-    "./assets/css/chroma.css",
     "./assets/js/*.js",
     "./assets/icon/*.svg",
+    "./assets/css/chroma.css",
+    "./assets/css/base.css",
   ],
   safelist: ["tag-*"],
   darkMode: "class",

@@ -144,6 +144,10 @@
     &.timer .lucide {
       @apply text-aqua;
     }
+
+    &.briefcase .lucide {
+      @apply text-yellow-dim;
+    }
   }
 
   /* Heading anchors */
@@ -157,9 +161,13 @@
       & > .anchor {
         display: none;
       }
-      &:hover > a.anchor {
-        display: inline-block;
-        @apply text-orange no-underline;
+      &:hover,
+      &:active,
+      &:focus {
+        & > a.anchor {
+          display: inline-block;
+          @apply text-orange no-underline;
+        }
       }
     }
   }
@@ -204,7 +212,8 @@
   article.mini > .prose.prose-sm {
     @apply text-fg3;
 
-    & blockquote, p {
+    & blockquote,
+    p {
       @apply my-1;
     }
   }

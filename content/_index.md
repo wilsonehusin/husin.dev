@@ -1,6 +1,10 @@
-Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco.
+Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco. [More about me →](/about/)
 
-[Read my professional profile ⇀](/about/)
+{{< callout class="briefcase" >}}
+
+I'm looking for my next role! [Hire me?](/hire-me)
+
+{{</ callout >}}
 
 ---
 

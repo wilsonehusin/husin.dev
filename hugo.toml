@@ -34,12 +34,12 @@ enable = true
   title = "Mini"
   url = "/mini/"
   weight = "101"
-[[menu.main]]
-  identifier = "visual"
-  name = "visual"
-  title = "Visual"
-  url = "/visual/"
-  weight = "102"
+# [[menu.main]]
+#   identifier = "visual"
+#   name = "visual"
+#   title = "Visual"
+#   url = "/visual/"
+#   weight = "102"
 [[menu.main]]
   identifier = "hire-me"
   name = "hire-me"
