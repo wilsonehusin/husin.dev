@@ -17,3 +17,4 @@ These days, I try to distance myself from Twitter. The [mini posts](/mini/) are 
 - [GitHub](https://github.com/wilsonehusin)
 - [LinkedIn](https://linkedin.com/in/wilsonehusin)
 - [Mastodon](https://hachyderm.io/@wilson)
+- [Bluesky](https://bsky.app/profile/husin.dev)
