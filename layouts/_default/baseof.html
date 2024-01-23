@@ -28,7 +28,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    {{- $fonts := slice "inter" -}}
+    {{- $fonts := slice "inter" "victor" -}}
     {{- range $fonts -}}
       {{- $path := fmt.Printf "css/fonts/%s.css" . -}}
       {{- $r := resources.Get $path -}}

@@ -17,7 +17,9 @@
         <img class="my-4" src="{{ $f.RelPermalink }}" alt="{{ .alt }}" />
       {{- end -}}
       <div class="flex items-center">
-        <div class="tags my-2 flex items-center justify-end text-xs font-light">
+        <p
+          class="tags my-2 hidden items-center justify-end text-xs font-light sm:flex"
+        >
           {{ range .GetTerms "tags" }}
             <a
               href="{{ .RelPermalink }}"
@@ -26,7 +28,7 @@
               #{{ .LinkTitle }}
             </a>
           {{ end }}
-        </div>
+        </p>
         <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
         <span
           class="not-prose rounded-full font-serif text-sm font-semibold text-fg4"
@@ -35,6 +37,17 @@
         </span>
       </div>
     </header>
-    <div class="prose px-1 text-sm md:ml-8">{{- .Content }}</div>
+    <div class="prose px-1 text-sm md:ml-8 sm:mb-8">{{- .Content }}</div>
+    <div class="tags flex items-center text-xs font-light sm:hidden">
+      <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
+      {{ range .GetTerms "tags" }}
+        <a
+          href="{{ .RelPermalink }}"
+          class="tag-{{ .LinkTitle }} px-0.5 text-xs"
+        >
+          #{{ .LinkTitle }}
+        </a>
+      {{ end }}
+    </div>
   </article>
 {{ end }}

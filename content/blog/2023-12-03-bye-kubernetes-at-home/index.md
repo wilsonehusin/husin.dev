@@ -1,5 +1,10 @@
 ---
 title: Bye Kubernetes at home
+tags:
+  - kubernetes
+  - containers
+  - nix
+  - linux
 ---
 
 Having Kubernetes as a platform to deploy applications was a convenient escape hatch from managing my home server without having to understand Nix too much.

@@ -72,7 +72,7 @@ module.exports = {
           "sans-serif-condensed",
           "sans-serif",
         ],
-        mono: ["ui-monospace", defaults.fontFamily.mono],
+        mono: ["'Victor Mono Variable'", defaults.fontFamily.mono],
       },
       typography: ({ theme }) => ({
         DEFAULT: {

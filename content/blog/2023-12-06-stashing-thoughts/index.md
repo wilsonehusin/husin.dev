@@ -1,5 +1,7 @@
 ---
 title: Stashing thoughts
+tags:
+  - tools
 description: >-
   Started incorporating note-taking system to my workflow for about a week and I’m surprised how helpful it has been.
 ---
@@ -8,7 +10,7 @@ Sometimes, I feel like life and creative work is similar to open world games: a 
 
 I have been doing a lot of exploratory projects lately around NixOS and homelab. In that development flow, my “enterprise software developer” brain often finds forks on the thought path.
 
-> 💡 "Oh this could be a neat separate project!"
+> 💡 Oh this could be a neat separate project!
 >
 > --Me
 
