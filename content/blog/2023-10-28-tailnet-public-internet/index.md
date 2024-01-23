@@ -1,7 +1,5 @@
 ---
 title: Exposing tailnet to public internet
-url: tailnet-public-internet
-publishDate: 2023-10-28
 aliases:
   - exposing-tailnet-to-public-internet
 tags:

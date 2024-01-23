@@ -72,7 +72,7 @@ module.exports = {
           "sans-serif-condensed",
           "sans-serif",
         ],
-        mono: ["Iosevka Variable", "Iosevka", defaults.fontFamily.mono],
+        mono: ["ui-monospace", defaults.fontFamily.mono],
       },
       typography: ({ theme }) => ({
         DEFAULT: {
@@ -113,6 +113,7 @@ module.exports = {
             "blockquote p:first-of-type::before": false,
             "blockquote p:first-of-type::after": false,
             "blockquote p": { fontWeight: "normal" },
+            code: { fontSize: "var(--step--1)" },
           },
         },
       }),

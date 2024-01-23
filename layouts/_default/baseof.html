@@ -28,7 +28,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    {{ partial "vendor/fonts/inter.html" }}
+    {{- $fonts := slice "inter" -}}
+    {{- range $fonts -}}
+      {{- $path := fmt.Printf "css/fonts/%s.css" . -}}
+      {{- $r := resources.Get $path -}}
+      {{- with resources.ExecuteAsTemplate $path $ $r | minify | fingerprint -}}
+        <link
+          rel="stylesheet"
+          href="{{ .RelPermalink }}"
+          integrity="{{ .Data.Integrity }}"
+        />
+      {{- end -}}
+    {{- end -}}
 
     {{- $stylesheets := slice "gruvbox" "chroma" "dist" }}
     {{- range $stylesheets }}

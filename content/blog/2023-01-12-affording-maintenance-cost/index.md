@@ -1,7 +1,5 @@
 ---
 title: Affording maintenance cost
-url: affording-maintenance-cost
-publishDate: 2023-01-12T06:05:44Z
 tags:
   - meta
   - management

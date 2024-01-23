@@ -1,7 +1,5 @@
 ---
-title: Execute a command as another user with `pkexec`
-url: pkexec
-publishDate: 2023-10-24
+title: Execute a command as another user with pkexec
 aliases:
   - til-pkexec-execute-a-command-as-another-user
 tags:

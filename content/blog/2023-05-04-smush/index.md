@@ -1,9 +1,7 @@
 ---
 title: Smush
-url: smush
 aliases:
   - smush-parallel-command-runner
-publishDate: 2023-05-04
 tags:
   - projects
   - golang

@@ -13,7 +13,12 @@ enable = true
   description = "Personal site maintainted by Wilson Husin. Writing about software engineering within developer productivity, platform infrastructure, and web applications with perspectives of human-computer ergonomics and software performance."
 
 [frontmatter]
-  date = [":filename", "publishdate", ":default", ":fileModTime"]
+  date = ["publishdate", ":filename", ":default", ":fileModTime"]
+
+[permalinks]
+  [permalinks.page]
+    blog = "/:slug/"
+    mini = "/mini/:year:month:day:slug"
 
 [menu]
 [[menu.main]]

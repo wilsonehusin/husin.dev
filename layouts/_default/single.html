@@ -4,7 +4,7 @@
       <h1
         class="font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1 md:-ml-2 md:text-6xl"
       >
-        {{- .Page.Title | markdownify -}}
+        {{- .Page.Title -}}
       </h1>
       {{- if .Page.Description }}
         <h3 class="not-prose mt-4 font-medium text-fg4">
@@ -13,7 +13,7 @@
       {{- end }}
       {{- with .Param "header" -}}
         {{ $f := $.Resources.GetMatch .src }}
-        {{ $f = $f.Process "webp q90" | fingerprint }}
+        {{ $f = $f.Process "webp" | fingerprint }}
         <img class="my-4" src="{{ $f.RelPermalink }}" alt="{{ .alt }}" />
       {{- end -}}
       <div class="flex items-center">

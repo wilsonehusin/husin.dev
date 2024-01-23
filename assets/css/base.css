@@ -128,9 +128,6 @@
       width: 1.5rem;
       padding: 0.1rem;
       margin-right: 0.5rem;
-    }
-
-    &.info .lucide {
       @apply text-yellow;
     }
 
@@ -157,10 +154,6 @@
     &.briefcase .lucide {
       @apply text-yellow-dim;
     }
-  }
-
-  .list-element code {
-    @apply text-bg4 group-hover:text-fg2;
   }
 
   h1,

@@ -1,7 +1,5 @@
 ---
 title: Building containers in Nix, the sinful way
-url: nix-container-sinful
-publishDate: 2023-11-15
 header:
   src: "header.png"
   alt: Snippet of typical output when building containers with Docker Buildx plugin.

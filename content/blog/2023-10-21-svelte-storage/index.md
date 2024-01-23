@@ -1,9 +1,7 @@
 ---
 title: Integrating Svelte store with browser storage
-url: svelte-storage
 aliases:
   - integrating-svelte-store-with-browser-storage
-publishDate: 2023-10-21
 tags:
   - svelte
 description: >-
