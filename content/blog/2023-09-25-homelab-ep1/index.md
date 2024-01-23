@@ -6,6 +6,8 @@ tags:
   - nix
   - kubernetes
   - homelab
+description: >-
+  A preview of self-hosted applications and services that I run on my home server.
 ---
 
 Earlier this year, I converted an existing gaming computer into a small homelab cluster to be a personal server. I consider this journey to be a quest on incorporating better quality software in organizing my digital archives.
