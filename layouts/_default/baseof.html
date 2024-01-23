@@ -3,7 +3,7 @@
   <head>
     <script>
       {{ with resources.Get "js/dark-mode.js" | minify }}
-        {{ .Content }}
+        {{ .Content | safeJS }}
       {{ end }}
 
       evalDarkMode();
