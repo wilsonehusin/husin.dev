@@ -68,6 +68,8 @@
     {{ $desc := site.Params.Description }}
     {{- if .Params.Description }}
       {{ $desc = .Params.Description }}
+    {{- else if and (eq .Page.Kind "page") .Page.Summary -}}
+      {{ $desc = .Page.Summary }}
     {{- end }}
     <meta property="description" content="{{ $desc }}" />
     <meta property="og:description" content="{{ $desc }}" />
