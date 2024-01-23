@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <main class="mx-auto max-w-7xl">
+    <article class="mb-8">
+      <header class="tags my-4">
+        <h1
+          class="font-industrial text-4xl font-bold leading-none tracking-tight text-fg1"
+        >
+          {{- .Page.Title -}}
+        </h1>
+      </header>
+      <div class="px-1 text-sm font-medium text-fg4 md:ml-8">
+        {{- .Content }}
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
+      </div>
+    </article>
+    <div class="max-w-[48rem] text-sm text-fg4">
+      {{- range sort .Pages "Pages.Len" "desc" -}}
+        <a
+          href="{{ .RelPermalink }}"
+          class="group flex w-full items-baseline justify-between py-1"
+        >
+          <span
+            class="w-[7ch] shrink-0 pr-2 text-right font-serif font-light group-hover:text-fg2"
+          >
+            {{ len .Pages }}x
+          </span>
+          <div class="tags list-element flex flex-grow justify-between">
+            <span
+              class="tag-{{- .Title }} font-semibold decoration-yellow-dim group-hover:text-fg0 group-hover:underline"
+            >
+              #{{ .Title | markdownify }}
+            </span>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </main>
+{{ end }}

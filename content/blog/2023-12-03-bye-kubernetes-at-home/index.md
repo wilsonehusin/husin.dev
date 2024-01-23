@@ -30,7 +30,5 @@ They are balanced with the fact that I would not need to worry about Kubernetes 
 Jury is still out on how long this will last. Nonetheless, it’s an exciting new chapter for my homelab!
 
 {{< callout >}}
-
 This situation is incomparable to enterprise setups. Heck, I probably would stick with Kubernetes if I had multi-node cluster.
-
 {{</ callout >}}

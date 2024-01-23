@@ -27,6 +27,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {{ hugo.Generator }}
 
     {{- $fonts := slice "inter" "victor" -}}
     {{- range $fonts -}}
@@ -124,5 +125,14 @@
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ end }}
+    <div
+      class="mx-auto my-16 flex max-w-7xl flex-col items-center justify-between text-xs text-fg4"
+    >
+      <p class="text-fg3">© 2023-{{ time.Now.Year }} Wilson Husin.</p>
+      {{- with site.LastChange | time.Format "2006-01-02T15:04:05Z0700" -}}
+      <p class="">Site was built <relative-time datetime="{{ . }}">{{ . }}</relative-time>.</p>
+      {{- end -}}
+      <p class="">All rights reserved, unless otherwise stated.</p>
+    </div>
   </body>
 </html>

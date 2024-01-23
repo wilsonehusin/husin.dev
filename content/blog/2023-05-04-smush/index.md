@@ -13,7 +13,7 @@ description: >-
 **Try it out!**
 
 If you are more interested to have fun with the subject immediately, then [let some fun be had](https://github.com/wilsonehusin/smush). For more story on how things got here, read on!
-{{< /callout >}}
+{{</ callout >}}
 
 > We are almost hitting the 3,000 minutes limit and we still have a week left.
 
@@ -27,7 +27,7 @@ Unfortunately, this was a wake up call for me that GitHub Actions unlimited minu
 In GitHub Actions, _run time_ is the amount of time used by a job / pipeline based on how much real-world time was consumed. It means when two jobs start at the same time, takes X minutes to finish, and then finishes at the same time, the run time is X minutes. Some nerds also refer to this as [wall time](https://en.wikipedia.org/wiki/Elapsed_real_time).
 
 _Billable time_, on the other hand, is the amount of time that GitHub will count towards your GitHub Actions minutes usage. This calculation measures time of each job, such that two parallel job of X minutes would yield 2X minutes of billable time. Oh, and they [round up each job to the nearest whole minute](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions#:~:text=GitHub%20rounds%20the%20minutes%20and%20partial%20minutes%20each%20job%20uses%20up%20to%20the%20nearest%20whole%20minute.).
-{{< /callout >}}
+{{</ callout >}}
 
 How could 6 minutes run time got translated to 16 minutes of billable time? Well, it adds up: I had parallelize several jobs which took less 1 minute, think about the many linters a given web application project has, and GitHub just round up 5 second job to 1 minute of billable time.
 
@@ -50,7 +50,7 @@ When talking about _build vs buy_ scenarios like this one, there are very reason
 - Consolidate the jobs and run them linearly, an extra minute of run time is still not bad
 
 And they are absolutely right! However, I thought about the solution right before embarking a 20 hour flight across the planet, so that was a nice distraction to prevent jet lag.
-{{< /callout >}}
+{{</ callout >}}
 
 ## Using Smush
 
@@ -116,8 +116,7 @@ I would guess that the underlying infrastructure of GitHub Actions have hardware
 In my observation, 2 core 4 thread machines will usually show up as 4 processors in `/proc/cpuinfo`, thus resulting in Go's `runtime.NumCPU()` to return `4`. I wonder if GitHub Actions runner's infrastructure virtualization somehow returns 2 while the actual hardware processes it as if there are 4.
 
 Don't quote me on this though, This is a hypothesis without knowing much of under the hood. If you have an alternative guess or would like to share what you know, [please drop me a line](mailto:wilson@husin.dev) and I would like to learn from you!
-
-{{< /callout >}}
+{{</ callout >}}
 
 ## Just Smush them
 

@@ -1,60 +1,64 @@
-+++
-title = "Hire me!"
-+++
+---
+title: "Hire me!"
+---
 
 Hi, I'm Wilson, a software developer in San Francisco, California. I really like to **make things go fast ⚡️**
 
-{{< callout class="info" >}}
-I'm looking for my next role! Proficient in **Go** and **Ruby**, as well as general **web and cloud infrastructure**. Schedule a chat with me at [cal.com/husin](https://cal.com/husin).
-{{< /callout >}}
+{{< callout class="briefcase" >}}
+I'm looking for my next role! Proficient in **Go** and **Ruby**, as well as general **web and cloud infrastructure**. [Get my resume](/Wilson_Husin_Resume.pdf), schedule a chat with me [cal.com/husin](https://cal.com/husin), or [send me an email](mailto:hey@husin.me).
+{{</ callout >}}
 
-My most gratifying accomplishments are when I deliver my work to products and organizations which users would pleasantly notice over time despite minimal publicity.
+My focus is on building developer experience and reliable infrastructure. You may find my work to be incredibly useful if you are looking to:
 
-In an organization of ~100 engineers, I cut their CI system's p95 execution time from over 25 minutes to under 10 minutes, with average down from 12 minutes to 6 minutes.
+- Speed up systems, whether software or processes.
+- Increase reliability of services.
+- Build durability throughout integration layers.
+- Create self-serve infrastructure-as-code for product development teams.
+- Optimize costs of cloud computing and development tools.
+
+Various skills that I would be bringing to your organization:
+
+- Proficient in Go and Ruby, decent with JavaScript and CSS, comfortable with anything that needs to be done.
+- Experience of managing Kubernetes clusters, container runtimes, and various Linux quirks in production.
+- Periodically packing bite-size lessons on observability and operations.
+- Collaborating closely with users and customers.
+- Managing projects from inception to production.
+
+Ultimately, I would like to work on difficult problems with kind people. If it sounds like we could be a good fit, I would like to hear from you!
+
+Some snippets of kind words from past colleagues about me:
 
 {{< callout class="testimonial" >}}
 "**CI is so good** now that letting it run has **fast** enough feedback loop compared to locally running tests."
-{{< /callout >}}
-
-In the same period, I tamed test stability from ~70% to 99%.
+{{</ callout >}}
 
 {{< callout class="testimonial" >}}
 "I used to hit retry on CI **at least once a day** and I have **not done it in the last month**."
-{{< /callout >}}
+{{</ callout >}}
 
-## Technical details
+{{< callout class="testimonial" >}}
+"I don't need to block a workday to finish this anymore since now **it's faster than I could finish my lunch**!"
+{{</ callout >}}
 
-Generally, I feel at home with Ruby and Go projects, from system programming to web applications. I have worked with several Rails code bases and spent a few years working on Kubernetes and the cloud-native ecosystem.
+My most gratifying accomplishments are when I deliver my work to products and organizations which users would pleasantly notice over time despite minimal publicity.
 
-I have contributed features and bug fixes for front-end applications in various JavaScript and TypeScript code bases, but I'm more comfortable with CSS than any frameworks.
+- At Modern Treasury, I worked in internal tools and build system.
 
-{{< callout class="palette" >}}
-I made this site without pre-built components!
-{{< /callout >}}
+  - I cut down their continuous integration (CI) execution time from p95 of over 25 minutes to under 10 minutes, with the average down from 14 minutes to 6 minutes.
+  - During the same time, I stabilized their test stability from ~70% to 99%.
+  - **This 1.5 month work resulting in over 60 engineering hours saved per week**, allowing ~100 engineers to maintain their focus on development.
 
-All in all, I have reasonable skillset to be comfortable throughout different layers of software, more productive in some than others.
+- I spent about 4 years at Pivotal and VMware working on Kubernetes.
 
-## How I work
+  - I was part of the release engineering team for open-source Kubernetes project, shepherding releases between 1.19 and 1.22 cycles.
+  - Internally, I was mostly involved in release engineering where I **eliminated false positive CVE alerts, which accounts for 90% of alerts**, and led development towards **50% faster artifact builds, saving over 100 engineering hours per week**.
 
-My problem-solving work usually starts with the following:
+- I was a software engineer at Maca where I drove implementation of the company's first product from its inception.
 
-- Where is the pain point? Example: all the data is there, but making sense out of it is hard.
-- What does solving this enable us? Example: eliminates 90% of error noise, therefore only reporting errors which we want to know about.
+  - I worked on getting the system to be SOC 2 compliant.
+  - Built out interview rubric.
+  - Got my hands on all corners of the engineering department.
 
-These items help me identify the people who would benefit from my work and allow me to effectively collaborate with them, bringing solutions that solves real problems.
-
-If software is a garden, I like to enable other gardeners to focus on their plants special needs while I make sure the general needs (water, fertilizers, etc) becomes the least of concern when building a thriving ecosystem as a team.
-
-## What I'm looking for
-
-I would like to work on difficult problems with kind people. I perform best when an organization encourages collective ownership of development and roadmap.
-As such, it is personally important for me to work with folks interested to discuss and learn from the problems, then engineer the solution appropriately. Software is a team sport!
-
-## Good match?
-
-Companies which may benefit the most from my work:
-
-- Working on reliability and confidence in running software.
-- Looking to smooth out internal engineering workflow.
-- Finding for reasons why something takes too long.
-- Wants assurance that every dollar spent on cloud is worth the cost.
+- I was at Cerner Corporation, which was acquired by Oracle recently, for a year.
+  - I built out integrations across services to comply with GDPR right to erasure throughout 10+ year old legacy systems.
+  - I also flushed out the release system to be faster (from 2 hours to 40 minutes).

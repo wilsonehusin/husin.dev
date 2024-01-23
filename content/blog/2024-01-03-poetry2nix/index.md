@@ -47,9 +47,7 @@ in import src { inherit pkgs; }
 ```
 
 {{< callout class="info" >}}
-
 This _may_ be simpler with Nix Flakes, but I have not grok it fully that I decided to stick with what I can understand in plain Nix.
-
 {{</ callout >}}
 
 We can now use the `poetry2nix` definition from above in our build configuration.

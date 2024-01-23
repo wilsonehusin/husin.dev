@@ -11,9 +11,7 @@ description: >-
 My home cluster has Tailscale running on the node while Kubernetes Ingress only listens to the Tailscale IP. In other words, services which I have deployed on my home cluster are only accessible through my Tailnet.
 
 {{< callout >}}
-
 Tailnet is a private network for the given Tailscale account. Devices within the same tailnet can reach each other "as if they are within the same network". Like a LAN party, but over the internet!
-
 {{</ callout >}}
 
 I have been holding back on shaving some yaks of "CI system with access to my tailnet" because setting up Tailscale access from GitHub-managed CI system ~~doesn't sound like a very smart idea~~ (future Wilson here -- I learned that perhaps it's as bad as I thought since [Tailscale supports this use case](https://github.com/tailscale/github-action)). Having CI system within my cluster (thus my tailnet) makes those ideas a whole lot more actionable.

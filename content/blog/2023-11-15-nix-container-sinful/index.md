@@ -18,9 +18,7 @@ While there are blessed paths to build containers with Nix tooling, Nix comes wi
 ## Crash course on Nix purity
 
 {{< callout >}}
-
 If you're already familiar with Nix, feel free to skip this section and jump to [_containers_](#with-containers).
-
 {{</ callout >}}
 
 Nix purists like to describe Nix's trait as "pure". I did not find this explanation helpful, until I realized and combined this with another piece of the puzzle: _Linux works through convention_. Despite many variations of Linux distributions, most would see `/usr/local/bin` in their `$PATH` by default. People expect `/bin/bash` to exist and dynamically linked libc is under `/usr/lib`.
@@ -246,9 +244,7 @@ I imagine there is a good reason why certificates are handled differently compar
 Using Distroless is one way to solve this, while the other is by bundling CA certificates from Nix as well, which is left as an exercise for the reader.
 
 {{< callout >}}
-
 On NixOS, start with `/etc/ssl/certs/ca-bundle.crt` and `/etc/ssl/certs/ca-certificates.pem`.
-
 {{</ callout >}}
 
 ## Appendix
