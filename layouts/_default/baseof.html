@@ -126,13 +126,10 @@
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ end }}
     <div
-      class="mx-auto my-16 flex max-w-7xl flex-col items-center justify-between text-xs text-fg4"
+      class="mx-auto my-6 flex max-w-7xl flex-col items-center text-xs font-light text-fg4 sm:my-16"
     >
-      <p class="text-fg3">© 2023-{{ time.Now.Year }} Wilson Husin.</p>
-      {{- with site.LastChange | time.Format "2006-01-02T15:04:05Z0700" -}}
-      <p class="">Site was built <relative-time datetime="{{ . }}">{{ . }}</relative-time>.</p>
-      {{- end -}}
-      <p class="">All rights reserved, unless otherwise stated.</p>
+      <hr class="my-2 w-8 text-yellow-dim" />
+      <p>© 2023-{{ time.Now.Year }} Wilson Husin</p>
     </div>
   </body>
 </html>
