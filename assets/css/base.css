@@ -153,8 +153,11 @@
       }
     }
 
-    &.coins .lucide {
-      @apply text-green;
+    &.coins,
+    &.server {
+      .lucide {
+        @apply text-green;
+      }
     }
 
     &.timer .lucide {
