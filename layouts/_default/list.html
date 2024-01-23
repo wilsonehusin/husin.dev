@@ -5,7 +5,7 @@
         <h1
           class="font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1"
         >
-          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title -}}
+          {{- .Page.Title -}}
         </h1>
       </header>
       <div class="px-1 text-sm font-medium text-fg4 md:ml-8">
@@ -15,7 +15,10 @@
     </article>
     {{ range (.Pages.GroupByDate "2006") }}
       {{ if not (eq .Key "0001") }}
-        <h2 id="{{ .Key }}" class="mt-2 font-serif text-xl text-fg3 hover:text-fg1">
+        <h2
+          id="{{ .Key }}"
+          class="mt-2 font-serif text-xl text-fg3 hover:text-fg1"
+        >
           {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
         </h2>
       {{- end }}

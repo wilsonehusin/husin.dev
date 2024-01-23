@@ -1,0 +1,65 @@
+{{ define "main" }}
+  {{ $listOfPosts := eq .Page.Kind "term" }}
+  <main class="mx-auto max-w-7xl">
+    <article class="mb-8">
+      <header class="tags my-4">
+        <h1
+          class="{{- if $listOfPosts -}}
+            tag-{{- .Page.Title }}
+          {{ end }}font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1"
+        >
+          {{- if $listOfPosts -}}#{{- end -}}{{- .Page.Title -}}
+        </h1>
+      </header>
+      <div class="px-1 text-sm font-medium text-fg4 md:ml-8">
+        {{- .Content }}
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
+      </div>
+    </article>
+    {{ range (.Pages.GroupByDate "2006") }}
+      {{ if and $listOfPosts (not (eq .Key "0001")) }}
+        <h2
+          id="{{ .Key }}"
+          class="mt-2 font-serif text-xl text-fg3 hover:text-fg1"
+        >
+          {{ .Key }} <a class="anchor" href="#{{ .Key }}">¶</a>
+        </h2>
+      {{- end }}
+      <div class="max-w-[48rem] text-sm text-fg4">
+        {{- $items := .Pages }}
+        {{- if $listOfPosts -}}
+          {{- $items = sort $items "Date" "desc" -}}
+        {{- else -}}
+          {{- $items = sort $items "Title" -}}
+        {{- end -}}
+        {{ range $items }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="group flex w-full justify-between py-1"
+          >
+            <span
+              class="w-[7ch] shrink-0 pr-2 text-right font-serif font-light group-hover:text-fg2"
+            >
+              {{- if $listOfPosts }}
+                {{- with (cond .Date.IsZero time.Now .Date.UTC) }}
+                  {{- time.Format "Jan 2" . -}}
+                {{- end }}
+              {{- else -}}
+                ({{ len .Pages }})
+              {{- end -}}
+            </span>
+            <div class="tags list-element flex flex-grow justify-between">
+              <span
+                class="{{- if not $listOfPosts -}}
+                  tag-{{- .Title }}
+                {{ end }} font-semibold decoration-yellow-dim group-hover:text-fg0 group-hover:underline"
+              >
+                {{ .Title | markdownify }}
+              </span>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </main>
+{{ end }}

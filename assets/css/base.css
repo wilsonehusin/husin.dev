@@ -95,17 +95,25 @@
 
   /* Tag keywords */
   .tags {
-    & .tag-golang {
+    .tag-golang,
+    .tag-nix {
       @apply text-blue;
     }
-    & .tag-meta {
+    .tag-meta, .tag-svelte {
       @apply text-orange;
     }
-    & .tag-projects {
+    .tag-projects,
+    .tag-containers {
       @apply text-aqua;
     }
-    & .tag-management {
+    .tag-management {
       @apply text-purple;
+    }
+    .tag-linux {
+      @apply text-yellow;
+    }
+    .tag-til {
+      @apply text-green;
     }
   }
 
