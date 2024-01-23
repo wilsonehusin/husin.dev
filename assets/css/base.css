@@ -99,12 +99,16 @@
     .tag-nix {
       @apply text-blue;
     }
+    .tag-kubernetes {
+      @apply text-blue-dim;
+    }
+    .tag-svelte,
+    .tag-git {
+      @apply text-orange;
+    }
     .tag-meta,
     .tag-til {
-      @apply text-red;
-    }
-    .tag-svelte {
-      @apply text-orange;
+      @apply text-orange-dim;
     }
     .tag-projects,
     .tag-containers {

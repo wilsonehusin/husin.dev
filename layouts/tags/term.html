@@ -8,9 +8,9 @@
           #{{- .Page.Title -}}
         </h1>
       </header>
-      <div class="px-1 text-sm font-medium text-fg4 md:ml-8">
+      <div class="prose px-1 text-sm font-medium text-fg4 md:ml-8">
         {{- .Content }}
-        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
+        <hr />
       </div>
     </article>
     {{ range (.Pages.GroupByDate "2006") }}

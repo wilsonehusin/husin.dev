@@ -5,6 +5,7 @@ aliases:
 tags:
   - til
   - linux
+  - tools
 description: >-
   In the absence of `sudo`, `pkexec` is an alternate mechanism to gain privileges of another user, including root.
 ---
