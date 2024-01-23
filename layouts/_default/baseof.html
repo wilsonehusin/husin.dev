@@ -90,19 +90,20 @@
       <meta property="twitter:image" content="{{ $imgPreview.RelPermalink }}" />
     {{ end }}
 
-
+    {{ $title := .Site.Title }}
+    {{- if .Params.hide_site_title -}}
+      {{- $title = .Page.Title -}}
+    {{- else if .Page.Title -}}
+      {{- $title = fmt.Printf "%s | %s" .Page.Title .Site.Title -}}
+      {{- if eq .Page.Kind "term" -}}
+        {{- $title = fmt.Printf "%s%s" "#" $title -}}
+      {{- end -}}
+    {{- end -}}
     <title>
-      {{ block "title" . }}
-        {{- if .Params.hide_site_title -}}
-          {{ .Page.Title }}
-        {{- else if .Page.Title -}}
-          {{- if eq .Page.Kind "term" }}#{{- end -}}{{- .Page.Title }} |
-          {{ .Site.Title }}
-        {{- else -}}
-          {{ .Site.Title }}
-        {{- end -}}
-      {{ end }}
+      {{ $title }}
     </title>
+    <meta property="og:title" content="{{ $title }}" />
+    <meta name="twitter:title" content="{{ $title }}" />
 
     {{ block "head" . }}{{ end }}
   </head>
