@@ -35,7 +35,7 @@
         {{ range $items }}
           <a
             href="{{ .RelPermalink }}"
-            class="group flex w-full justify-between py-1"
+            class="group flex w-full items-baseline justify-between py-1"
           >
             <span
               class="w-[7ch] shrink-0 pr-2 text-right font-serif font-light group-hover:text-fg2"
@@ -45,7 +45,7 @@
                   {{- time.Format "Jan 2" . -}}
                 {{- end }}
               {{- else -}}
-                ({{ len .Pages }})
+                {{ len .Pages }}
               {{- end -}}
             </span>
             <div class="tags list-element flex flex-grow justify-between">
@@ -54,7 +54,9 @@
                   tag-{{- .Title }}
                 {{ end }} font-semibold decoration-yellow-dim group-hover:text-fg0 group-hover:underline"
               >
-                {{ .Title | markdownify }}
+                {{- if not $listOfPosts -}}
+                  #
+                {{- end -}}{{ .Title | markdownify }}
               </span>
             </div>
           </a>

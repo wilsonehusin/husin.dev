@@ -170,11 +170,7 @@
   h5,
   h6 {
     & code {
-      @apply text-orange-dim;
-      &:before,
-      &:after {
-        content: "`";
-      }
+      @apply text-gray;
     }
     /* Heading anchors */
     &:has(> a.anchor) {

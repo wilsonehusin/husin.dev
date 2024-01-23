@@ -11,6 +11,11 @@
           {{- .Page.Description | markdownify -}}
         </h3>
       {{- end }}
+      {{- with .Param "header" -}}
+        {{ $f := $.Resources.GetMatch .src }}
+        {{ $f = $f.Process "webp q90" | fingerprint }}
+        <img class="my-4" src="{{ $f.RelPermalink }}" alt="{{ .alt }}" />
+      {{- end -}}
       <div class="flex items-center">
         <div class="tags my-2 flex items-center justify-end text-xs font-light">
           {{ range .GetTerms "tags" }}
