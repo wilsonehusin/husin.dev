@@ -77,7 +77,7 @@
 }
 /* KeywordNamespace */
 .chroma .kn {
-  color: var(--orange);
+  color: var(--orange-dim);
 }
 /* KeywordPseudo */
 .chroma .kp {
@@ -93,6 +93,7 @@
 }
 /* Name */
 .chroma .n {
+  color: var(--blue);
 }
 /* NameAttribute */
 .chroma .na {
@@ -215,7 +216,7 @@
 }
 /* LiteralStringRegex */
 .chroma .sr {
-  color: var(--green);
+  color: var(--aqua);
 }
 /* LiteralStringSingle */
 .chroma .s1 {
@@ -304,7 +305,6 @@
 /* GenericDeleted */
 .chroma .gd {
   color: var(--red);
-  font-weight: thin;
 }
 /* GenericEmph */
 .chroma .ge {
@@ -318,13 +318,12 @@
 }
 /* GenericHeading */
 .chroma .gh {
-  color: var(--blue);
+  color: var(--fg2);
   font-weight: bold;
 }
 /* GenericInserted */
 .chroma .gi {
   color: var(--green);
-  font-weight: thin;
 }
 /* GenericOutput */
 .chroma .go {
@@ -340,7 +339,7 @@
 /* GenericSubheading */
 .chroma .gu {
   color: var(--aqua);
-  font-weight: bold;
+  font-weight: thin;
 }
 /* GenericTraceback */
 .chroma .gt {
