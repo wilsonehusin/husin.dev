@@ -331,7 +331,7 @@
 }
 /* GenericPrompt */
 .chroma .gp {
-  color: var(--yellow-dim);
+  color: var(--orange-dim);
 }
 /* GenericStrong */
 .chroma .gs {
