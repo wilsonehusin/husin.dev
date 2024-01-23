@@ -59,10 +59,12 @@
 
     <!-- Search Engine Optimization (SEO) related tags -->
     <link rel="canonical" href="{{- .Permalink -}}" />
-    <meta property="og:url" content="{{- .Permalink -}}" />
     <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="{{- site.Title -}}" />
+    <meta property="og:url" content="{{- .Permalink -}}" />
+    <meta property="twitter:url" content="{{- .Permalink -}}" />
+    <meta property="twitter:domain" content="husin.dev" />
     <meta name="twitter:creator" content="@wilson" />
-    <meta name="twitter:domain" content="husin.dev" />
 
     {{- $desc := site.Params.Description -}}
     {{- if .Params.Description -}}
@@ -70,7 +72,7 @@
     {{- else if and (eq .Page.Kind "page") .Page.Summary -}}
       {{- $desc = .Page.Summary -}}
     {{- end -}}
-    <meta property="description" content="{{- $desc -}}" />
+    <meta property="description" content="{{- site.Params.Description -}}" />
     <meta property="og:description" content="{{- $desc -}}" />
     <meta name="twitter:description" content="{{- $desc -}}" />
 
@@ -82,24 +84,26 @@
 
     {{- $imgAlt := fmt.Printf "Profile picture of %s." site.Title -}}
     {{- $imgPreview := resources.Get "img/pp.webp" -}}
+    {{- $imgCard := "summary" -}}
     {{- if .Page.Param "header" -}}
       {{- $imgAlt = .Page.Param "header.alt" -}}
       {{- $imgPreview = .Page.Resources.GetMatch (.Page.Param "header.src") -}}
       {{- $imgPreview = $imgPreview.Process "webp" -}}
+      {{- $imgCard = "summary_large_image" -}}
     {{- end -}}
 
     {{- with $imgPreview | fingerprint -}}
       <meta property="og:image" content="{{- .Permalink -}}" />
       <meta property="og:image:alt" content="{{- $imgAlt -}}" />
       <meta property="twitter:image" content="{{- .Permalink -}}" />
-      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:card" content="{{- $imgCard -}}" />
     {{- end -}}
 
-    {{- $title := .Site.Title -}}
+    {{- $title := site.Title -}}
     {{- if .Params.hide_site_title -}}
       {{- $title = .Page.Title -}}
     {{- else if .Page.Title -}}
-      {{- $title = fmt.Printf "%s | %s" .Page.Title .Site.Title -}}
+      {{- $title = fmt.Printf "%s | %s" .Page.Title site.Title -}}
       {{- if eq .Page.Kind "term" -}}
         {{- $title = fmt.Printf "%s%s" "#" $title -}}
       {{- end -}}
