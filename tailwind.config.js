@@ -113,7 +113,6 @@ module.exports = {
             "blockquote p:first-of-type::before": false,
             "blockquote p:first-of-type::after": false,
             "blockquote p": { fontWeight: "normal" },
-            code: { fontSize: "var(--step--1)" },
           },
         },
       }),

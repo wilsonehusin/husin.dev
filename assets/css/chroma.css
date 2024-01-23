@@ -303,8 +303,8 @@
 }
 /* GenericDeleted */
 .chroma .gd {
-  color: var(--bg0);
-  background-color: var(--red);
+  color: var(--red);
+  font-weight: thin;
 }
 /* GenericEmph */
 .chroma .ge {
@@ -318,13 +318,13 @@
 }
 /* GenericHeading */
 .chroma .gh {
-  color: var(--green);
+  color: var(--blue);
   font-weight: bold;
 }
 /* GenericInserted */
 .chroma .gi {
-  color: var(--bg0);
-  background-color: var(--green);
+  color: var(--green);
+  font-weight: thin;
 }
 /* GenericOutput */
 .chroma .go {
@@ -339,7 +339,7 @@
 }
 /* GenericSubheading */
 .chroma .gu {
-  color: var(--green);
+  color: var(--aqua);
   font-weight: bold;
 }
 /* GenericTraceback */

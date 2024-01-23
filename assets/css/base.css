@@ -139,8 +139,11 @@
       @apply text-orange;
     }
 
-    &.play .lucide {
-      @apply text-blue;
+    &.play,
+    &.info {
+      .lucide {
+        @apply text-blue;
+      }
     }
 
     &.coins .lucide {

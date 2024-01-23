@@ -2,7 +2,7 @@
   <article class="mx-auto max-w-7xl">
     <header class="mb-2 mt-4 max-w-[64ch] md:ml-4">
       <h1
-        class="font-industrial text-4xl font-bold leading-none tracking-tighter text-fg1 md:-ml-2 md:text-6xl"
+        class="font-industrial text-4xl font-bold leading-none tracking-tight text-fg1 md:-ml-2 md:text-6xl"
       >
         {{- .Page.Title -}}
       </h1>
@@ -37,7 +37,7 @@
         </span>
       </div>
     </header>
-    <div class="prose px-1 text-sm md:ml-8 sm:mb-8">{{- .Content }}</div>
+    <div class="prose px-1 text-sm sm:mb-8 md:ml-8">{{- .Content }}</div>
     <div class="tags flex items-center text-xs font-light sm:hidden">
       <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
       {{ range .GetTerms "tags" }}
