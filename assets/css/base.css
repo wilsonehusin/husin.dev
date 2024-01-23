@@ -99,7 +99,8 @@
     .tag-nix {
       @apply text-blue;
     }
-    .tag-meta, .tag-svelte {
+    .tag-meta,
+    .tag-svelte {
       @apply text-orange;
     }
     .tag-projects,

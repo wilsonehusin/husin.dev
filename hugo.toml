@@ -55,3 +55,6 @@ enable = true
   [imaging.exif]
     disableDate = true
     disableLatLong = true
+
+[security.http]
+mediaTypes = ['^font/woff2$']
