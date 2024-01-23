@@ -20,4 +20,3 @@ It seems like running Linux on laptops should always have swap space, even if on
 
 - [Hibernate doesn't work anymore](https://discourse.nixos.org/t/hibernate-doesnt-work-anymore/24673)
 - [Is it possible to hibernate with swap-file?](https://discourse.nixos.org/t/is-it-possible-to-hibernate-with-swap-file/2852)
-

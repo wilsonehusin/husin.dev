@@ -32,4 +32,3 @@ MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
 LOCALE_ARCHIVE=/nix/store/fiyrsa2vgznb057f3w8lwcfzhqdq0igi-glibc-locales-2.38-27/lib/locale/locale-archive
 TZDIR=/nix/store/3vx4ajfr2gy3zbl803frpabh4n85cacp-tzdata-2023c/share/zoneinfo
 ```
-
