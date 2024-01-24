@@ -30,7 +30,7 @@
 <!-- Common -->
 <title>{{- $title -}}</title>
 <link rel="canonical" href="{{- .Permalink -}}" />
-<meta property="description" content="{{- site.Params.Description -}}" />
+<meta name="description" content="{{- site.Params.Description -}}" />
 {{- with resources.Get "img/pp.webp" -}}
   {{- with .Resize "32x" | fingerprint -}}
     <link rel="icon" type="image/webp" href="{{- .RelPermalink -}}" />
