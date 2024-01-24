@@ -27,6 +27,7 @@
 {{- end -}}
 {{- $imgPreview = $imgPreview | fingerprint -}}
 
+
 <!-- Common -->
 <title>{{- $title -}}</title>
 <link rel="canonical" href="{{- .Permalink -}}" />
@@ -36,6 +37,7 @@
     <link rel="icon" type="image/webp" href="{{- .RelPermalink -}}" />
   {{- end -}}
 {{- end -}}
+
 
 <!-- OpenGraph -->
 <meta property="og:title" content="{{- $title -}}" />

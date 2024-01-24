@@ -32,7 +32,12 @@
       {{- end }}
     </button>
   </div>
-  <button class="text-link flex md:hidden" title="Toggle navigation menu." aria-label="Navigation toggle button." onclick="toggleNavigationMenu()">
+  <button
+    class="text-link flex md:hidden"
+    title="Toggle navigation menu."
+    aria-label="Navigation toggle button."
+    onclick="toggleNavigationMenu()"
+  >
     {{ with resources.Get "icon/menu.svg" }}{{ .Content | safeHTML }}{{ end }}
   </button>
   <div
