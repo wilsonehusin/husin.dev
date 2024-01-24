@@ -7,9 +7,9 @@
         {{- .Page.Title -}}
       </h1>
       {{- if .Page.Description }}
-        <h3 class="not-prose mt-4 font-medium text-fg4">
+        <p class="not-prose mt-4 font-medium text-fg4">
           {{- .Page.Description | markdownify -}}
-        </h3>
+        </p>
       {{- end }}
       {{- with .Param "header" -}}
         {{ $f := $.Resources.GetMatch .src }}
