@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       colors: {
         // Gruvbox
+        "bg-harder": "var(--bg-harder)",
         "bg-hard": "var(--bg-hard)",
         "bg-soft": "var(--bg-soft)",
         bg0: "var(--bg0)",
@@ -90,7 +91,7 @@ module.exports = {
             "--tw-prose-captions": "var(--fg4)",
             "--tw-prose-code": "var(--orange)",
             "--tw-prose-pre-code": "var(--fg3)",
-            "--tw-prose-pre-bg": "var(--bg0)",
+            "--tw-prose-pre-bg": "var(--bg-hard)",
             "--tw-prose-th-borders": "var(--yellow-dim)",
             "--tw-prose-td-borders": "var(--bg3)",
             "--tw-prose-invert-body": "var(--tw-prose-body)",

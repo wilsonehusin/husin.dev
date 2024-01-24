@@ -1,7 +1,7 @@
 /* Background */
 .bg {
   color: var(--fg1);
-  background-color: var(--bg0);
+  background-color: var(--bg-hard);
 }
 /* PreWrapper */
 .chroma {

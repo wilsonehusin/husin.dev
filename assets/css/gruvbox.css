@@ -1,5 +1,6 @@
 /* Light mode */
 :root {
+  --bg-harder: #fffbea;
   --bg-hard: #f9f5d7;
   --bg-soft: #f2e5bc;
 
@@ -38,6 +39,7 @@
  *   Override the parent style if desired, otherwise fallback.
  */
 html.dark {
+  --bg-harder: #131313;
   --bg-hard: #1d2021;
   --bg-soft: #32302f;
 
