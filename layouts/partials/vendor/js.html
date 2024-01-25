@@ -1,11 +1,17 @@
-{{- with resources.GetRemote . | minify | fingerprint -}}
+{{- with resources.GetRemote .url -}}
   {{- with .Err -}}
     {{- errorf "%s" . -}}
   {{- else -}}
-    <script
-      type="module"
-      src="{{ .RelPermalink }}"
-      integrity="{{ .Data.Integrity }}"
-    ></script>
+    {{- $rename := path.Base $.url -}}
+    {{- if $.rename -}}
+      {{- $rename = $.rename }}
+    {{- end -}}
+    {{- with resources.Copy (fmt.Printf "js/%s" $rename) . | minify | fingerprint -}}
+      <script
+        type="module"
+        src="{{ .RelPermalink }}"
+        integrity="{{ .Data.Integrity }}"
+      ></script>
+    {{- end -}}
   {{- end -}}
 {{- end }}

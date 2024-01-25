@@ -1,9 +1,17 @@
 {{- $files := slice
-  (dict "style" "normal" "url" "https://rsms.me/inter/font-files/InterVariable.woff2")
-  (dict "style" "italic" "url" "https://rsms.me/inter/font-files/InterVariable-Italic.woff2")
+  (dict
+    "style" "normal"
+    "url" "https://rsms.me/inter/font-files/InterVariable.woff2"
+    "rename" "fonts/InterVariable.woff2")
+  (dict
+    "style" "italic"
+    "url" "https://rsms.me/inter/font-files/InterVariable-Italic.woff2"
+    "rename" "fonts/InterVariable-Italic.woff2")
 -}}
+
 {{- range $files -}}
-  {{- $f := resources.GetRemote .url | fingerprint -}}
+  {{- $f := resources.GetRemote .url -}}
+  {{- $f = resources.Copy .rename $f | fingerprint -}}
   @font-face {
     font-family: InterVariable;
     font-style: {{ .style }};

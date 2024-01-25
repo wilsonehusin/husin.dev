@@ -49,8 +49,12 @@
     {{- end -}}
 
     {{- $jsVendors := slice
-      "https://cdn.jsdelivr.net/npm/@github/relative-time-element@4/dist/bundle.js"
-      "https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js"
+      (dict
+        "url" "https://cdn.jsdelivr.net/npm/@github/relative-time-element@4/dist/bundle.js"
+        "rename" "relative-time-element.js")
+      (dict
+        "url" "https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js"
+        "rename" "instantpage.js")
     -}}
     {{- range $jsVendors -}}
       {{- partial "vendor/js.html" . -}}

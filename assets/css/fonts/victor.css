@@ -1,8 +1,12 @@
 {{- $files := slice
-  (dict "style" "normal" "url" "https://cdn.jsdelivr.net/fontsource/fonts/victor-mono:vf@latest/latin-wght-normal.woff2")
+  (dict
+    "style" "normal"
+    "url" "https://cdn.jsdelivr.net/fontsource/fonts/victor-mono:vf@latest/latin-wght-normal.woff2"
+    "rename" "fonts/VictorMono.woff2")
 -}}
 {{- range $files -}}
-  {{- $f := resources.GetRemote .url | fingerprint -}}
+  {{- $f := resources.GetRemote .url -}}
+  {{- $f = resources.Copy .rename $f | fingerprint -}}
   @font-face {
     font-family: 'Victor Mono Variable';
     font-style: {{ .style }};
