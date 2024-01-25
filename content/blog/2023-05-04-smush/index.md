@@ -115,7 +115,7 @@ I would guess that the underlying infrastructure of GitHub Actions have hardware
 
 In my observation, 2 core 4 thread machines will usually show up as 4 processors in `/proc/cpuinfo`, thus resulting in Go's `runtime.NumCPU()` to return `4`. I wonder if GitHub Actions runner's infrastructure virtualization somehow returns 2 while the actual hardware processes it as if there are 4.
 
-Don't quote me on this though, This is a hypothesis without knowing much of under the hood. If you have an alternative guess or would like to share what you know, [please drop me a line](mailto:wilson@husin.dev) and I would like to learn from you!
+Don't quote me on this though. This is a hypothesis without knowing much of under the hood. If you have an alternative guess or would like to share what you know, [please drop me a line](mailto:wilson@husin.dev) and I would like to learn from you!
 {{</ callout >}}
 
 ## Just Smush them
