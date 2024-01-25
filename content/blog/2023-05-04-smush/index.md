@@ -124,6 +124,10 @@ At day job, we had gone through several iterations of sub-par optimizations sinc
 
 ![Smush reduced our nearly 11 minute runtime with 13 minute billable time down to less than 6 minute runtime with 6 minute billable time.](just-smush.png)
 
+{{< callout >}}
+You may notice the "after" table has `build-*` jobs to be 0 seconds -- that job is equivalent to `build-* / deploy` on previous setup, while the `build-* / build` was merged in to `tests` step.
+{{</ callout >}}
+
 As an honorable mention, we also incorporated [casey/just](https://github.com/casey/just) to replace our 1-3 line of Bash files because writing `just lint-[linter]` is much more pleasant than finding the path to file which only gets used once.
 
 ## Reinventing the wheel
