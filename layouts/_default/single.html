@@ -39,7 +39,6 @@
     </header>
     <div class="prose px-1 text-sm sm:mb-8 md:ml-8">{{- .Content }}</div>
     <div class="tags flex items-center text-xs font-light sm:hidden">
-      <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
       {{ range .GetTerms "tags" }}
         <a
           href="{{ .RelPermalink }}"
