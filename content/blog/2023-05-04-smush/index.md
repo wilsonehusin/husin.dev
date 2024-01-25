@@ -111,7 +111,7 @@ $ smush -c smush.yaml -p 2
 {{< callout >}}
 **But how? _Why_?**
 
-I would guess that the underlying infrastructure of GitHub Actions have hardware which consists of 2 threads per core, but on a virtualized setup, that information is propagated properly.
+I would guess that the underlying infrastructure of GitHub Actions have hardware which consists of 2 threads per core and our runner is virtualized on top of it with 2 cores allocated.
 
 In my observation, 2 core 4 thread machines will usually show up as 4 processors in `/proc/cpuinfo`, thus resulting in Go's `runtime.NumCPU()` to return `4`. I wonder if GitHub Actions runner's infrastructure virtualization somehow returns 2 while the actual hardware processes it as if there are 4.
 
