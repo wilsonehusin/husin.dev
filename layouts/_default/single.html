@@ -14,7 +14,13 @@
       {{- with .Param "header" -}}
         {{ $f := $.Resources.GetMatch .src }}
         {{ $f = $f.Process "webp" | fingerprint }}
-        <img class="my-4" src="{{ $f.RelPermalink }}" alt="{{ .alt }}" />
+        <img
+          class="my-4"
+          src="{{ $f.RelPermalink }}"
+          height="{{ $f.Height }}"
+          width="{{ $f.Width }}"
+          alt="{{ .alt }}"
+        />
       {{- end -}}
       <div class="flex items-center">
         <p

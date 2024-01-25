@@ -3,7 +3,7 @@
 >
   <a href="/" class="group mr-2 flex items-center gap-2 text-lg font-bold">
     {{ with resources.Get "img/pp.webp" }}
-      {{ with .Resize "128x" | fingerprint }}
+      {{ with .Resize "64x" | fingerprint }}
         <img
           src="{{ .RelPermalink }}"
           alt="Profile picture icon"

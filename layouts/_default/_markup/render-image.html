@@ -5,6 +5,8 @@
     <img
       src="{{ $img.RelPermalink }}"
       alt="{{ .Text }}"
+      height="{{ $img.Height }}"
+      width="{{ $img.Width }}"
       {{ with .Title }}title="{{ . }}"{{ end }}
     />
   </p>
