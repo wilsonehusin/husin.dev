@@ -194,6 +194,9 @@
           display: inline-block;
           @apply text-orange no-underline;
         }
+        & > a.anchor:hover {
+          @apply text-orange-dim;
+        }
       }
     }
   }
