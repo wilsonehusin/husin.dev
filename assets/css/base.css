@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer components {
   .text-default {
     @apply text-fg2;
