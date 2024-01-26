@@ -179,9 +179,6 @@
   h4,
   h5,
   h6 {
-    & code {
-      @apply text-gray;
-    }
     /* Heading anchors */
     &:has(> a.anchor) {
       & > .anchor {
@@ -226,6 +223,17 @@
 
     & a {
       @apply decoration-yellow-dim underline-offset-2 transition-colors hover:text-orange-dim;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      code {
+        @apply text-orange;
+      }
     }
 
     & del {

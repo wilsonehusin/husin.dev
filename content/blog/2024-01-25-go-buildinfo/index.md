@@ -4,7 +4,6 @@ description: >-
   Go comes with standard library features to inspect build properties. Use `debug.ReadBuildInfo`.
 ---
 
-
 Starting Go 1.18, the function [`ReadBuildInfo` from `runtime/debug`](https://pkg.go.dev/runtime/debug#ReadBuildInfo) can be used to retrieve the build information of the current program, including version control revision.
 
 ```go
