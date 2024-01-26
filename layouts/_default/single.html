@@ -44,7 +44,7 @@
       </div>
     </header>
     <div class="prose px-1 text-sm sm:mb-8 md:ml-8">{{- .Content }}</div>
-    <div class="tags flex items-center text-xs font-light sm:hidden">
+    <div class="tags mt-8 flex items-center text-xs font-light sm:hidden">
       {{ range .GetTerms "tags" }}
         <a
           href="{{ .RelPermalink }}"
