@@ -68,18 +68,22 @@
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ end }}
     <div
-      class="mx-auto my-6 flex max-w-7xl flex-col items-start text-xs text-fg4 sm:my-16"
+      class="group mx-auto my-6 flex max-w-7xl flex-col items-start text-xs font-light text-fg4 sm:my-16"
     >
       <hr class="my-2 w-8 text-yellow-dim" />
       <p class="font-semibold text-fg3">
         © 2023-{{ time.Now.Year }} Wilson Husin
       </p>
       {{- with time.Format "2006-01-02T15:04:05Z0700" .Site.LastChange -}}
-        <p class="font-light">
+        <p>
           This site was last updated
           <relative-time datetime="{{- . -}}">{{- . -}}</relative-time>.
         </p>
       {{- end -}}
+      <code
+        class="text-[0.9em] font-semibold text-transparent duration-100 group-hover:text-fg4"
+        >:wq</code
+      >
     </div>
     {{- partial "analytics.html" . -}}
   </body>
