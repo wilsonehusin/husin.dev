@@ -1,5 +1,7 @@
 ---
 title: Stop stamping commit info in Go projects
+tags:
+  - go
 description: >-
   Go comes with standard library features to inspect build properties. Use `debug.ReadBuildInfo`.
 ---
