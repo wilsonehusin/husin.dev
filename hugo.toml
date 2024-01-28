@@ -10,7 +10,7 @@ enableGitInfo = true
 enable = true
 
 [params]
-  description = "Personal site of Wilson Husin. Writing about software engineering within developer productivity, platform infrastructure, and web applications with perspectives of human-computer ergonomics and software performance."
+  description = "Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco."
 
 [frontmatter]
   date = ["publishdate", ":filename", ":default", ":fileModTime"]
@@ -28,10 +28,10 @@ enable = true
   url = "/about/"
   weight = "001"
 [[menu.main]]
-  identifier = "blog"
-  name = "blog"
-  title = "Blog"
-  url = "/blog/"
+  identifier = "posts"
+  name = "posts"
+  title = "Posts"
+  url = "/posts/"
   weight = "100"
 # [[menu.main]]
 #   identifier = "mini"

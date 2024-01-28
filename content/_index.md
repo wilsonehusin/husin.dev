@@ -4,7 +4,7 @@ Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, 
 I'm looking for my next role! [Hire me?](/hire-me)
 {{</ callout >}}
 
-[I write articles](/blog/) with technical topics and occasionally some meta-commentary about technology (software) industry. Find me elsewhere on the internet:
+[I write articles](/posts/) with technical topics and occasionally some meta-commentary about technology (software) industry. Find me elsewhere on the internet:
 
 - [GitHub](https://github.com/wilsonehusin)
 - [LinkedIn](https://linkedin.com/in/wilsonehusin)
