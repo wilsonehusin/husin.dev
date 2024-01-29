@@ -17,7 +17,7 @@ enable = true
 
 [permalinks]
   [permalinks.page]
-    blog = "/:slug/"
+    posts = "/:slug/"
     mini = "/mini/:year:month:day:slug"
 
 [menu]
