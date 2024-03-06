@@ -5,7 +5,7 @@ title: "Hire me!"
 Hi, I'm Wilson, a software developer in San Francisco, California. I really like to **make things go fast ⚡️**
 
 {{< callout class="briefcase" >}}
-I'm looking for my next role! Proficient in **Go** and **Ruby**, as well as general **web and cloud infrastructure**. [Get my resume](/Wilson_Husin_Resume.pdf), schedule a chat with me [cal.com/husin](https://cal.com/husin), or [send me an email](mailto:hey@husin.me).
+I am no longer in the market as I recently joined [FireHydrant](https://firehydrant.io) to support engineering teams from ring to retro. [Come work with me](https://firehydrant.com/careers/).
 {{</ callout >}}
 
 My focus is on building developer experience and reliable infrastructure. You may find my work to be incredibly useful if you are looking to:
