@@ -3,7 +3,7 @@ title: Using Go toolchain to manage binary dependencies
 tags:
   - golang
 description: >-
-  Go modules can be used to define dependencies. Not only importable libraries, but also executable as part of development workflow.
+  Go modules can be used to define dependencies. Not only importable libraries, but also executables for development workflows.
 ---
 
 With Go modules being de facto dependency manager for a while now, we can use its feature to define versions of tools which are not directly imported as libraries in our source code. The bite-sized tips below are sorted from official recommendations to personal opinions.
