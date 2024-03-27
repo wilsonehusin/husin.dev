@@ -103,11 +103,11 @@ To make `go install` output be local, I would override the `$GOBIN` variable dur
 
 ```diff
   #!/usr/bin/env bash
-  
+
   set -euo pipefail
 +
 + export GOBIN=$PWD/bin
-  
+
   tools=$(go list -e -f "{{range .Imports}}{{.}} {{end}}" ./tools.go)
   for tool in $tools; do
     go install "${tool}"

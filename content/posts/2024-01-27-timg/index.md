@@ -1,8 +1,8 @@
 ---
 title: Images on terminal
 tags:
-- til
-- tools
+  - til
+  - tools
 header:
   src: "header.png"
   alt: "Terminal window showing image preview."

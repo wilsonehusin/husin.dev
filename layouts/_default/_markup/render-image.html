@@ -7,6 +7,8 @@
       alt="{{ .Text }}"
       height="{{ $img.Height }}"
       width="{{ $img.Width }}"
+      loading="lazy"
+      decoding="async"
       {{ with .Title }}title="{{ . }}"{{ end }}
     />
   </p>
