@@ -25,7 +25,9 @@ Breaking down the file above:
 1. Prefixing import path with `_` tells Go to import the package (i.e. run its `init()` function), but don't make the package methods accessible within the file. This is also why `go fmt` would not remove the line, because technically it's not unused import.
 1. Because the import path is still a valid import per usual, `go mod tidy` will take into account its version.
 
-Now, when running `go [run|install] golang.org/x/tools/cmd/stringer` on shell within the module directory, Go will honor the version described in `go.mod`.
+Now, when running `go [run|install] golang.org/x/tools/cmd/stringer` on shell within the module directory, Go will honor the version described in `go.mod`[^1].
+
+[^1]: Go reference: [_Module-aware commands_](https://go.dev/ref/mod#mod-commands).
 
 ## Separating import versions
 
@@ -80,7 +82,7 @@ $ go list -e -f "{{range .Imports}}{{.}} {{end}}" ./tools.go
 golang.org/x/tools/cmd/stringer github.com/sqlc-dev/sqlc/cmd/sqlc
 ```
 
-With some bash, we can get something close to "give me all dependencies required for this project"
+With some bash, we can get something close to "give me all dependencies required for this project".
 
 ```bash
 #!/usr/bin/env bash
@@ -95,7 +97,9 @@ done
 
 ## Installing to in-repository directory
 
-Different projects may use different versions of dependency. By default, `go install` will install to `$GOBIN` if defined, otherwise `$GOPATH/bin` (usually `~/go/bin` unless modified). This can be annoying when working on several projects with differing versions of the same tool, as Go will keep overwriting the existing version on every install.
+Different projects may use different versions of dependency. By default, `go install` will install to `$GOBIN` if defined, otherwise `$GOPATH/bin` (usually `~/go/bin` unless modified)[^2]. This can be annoying when working on several projects with differing versions of the same tool, as Go will keep overwriting the existing version on every install.
+
+[^2]: Go reference: [`go install`](https://go.dev/ref/mod#go-install).
 
 As such, I generally follow the convention of creating `bin/` folder within code repository root, then adding it to `.gitignore`. Additionally, I would add said folder to my `$PATH`, preferably using [direnv](https://direnv.net) with `PATH_add bin` function in `.envrc`.
 
