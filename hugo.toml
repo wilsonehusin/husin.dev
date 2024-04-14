@@ -13,6 +13,35 @@ enable = true
 [params]
   description = "Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco."
 
+[related]
+  includeNewer = true
+  toLower = true
+  threshold = 60
+[[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'keywords'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 100
+[[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'tags'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 80
+[[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'date'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 10
+
 [frontmatter]
   date = ["publishdate", ":filename", ":default", ":fileModTime"]
 
