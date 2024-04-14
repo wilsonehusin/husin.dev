@@ -1,6 +1,6 @@
 hugo-dev:
   rm -rf public/*
-  hugo server --bind 0.0.0.0 --renderToDisk --templateMetrics 
+  hugo server --bind 0.0.0.0 --templateMetrics
 
 hugo-build: css-gen
   rm -rf public/*
