@@ -245,6 +245,18 @@
     & del {
       @apply text-fg4;
     }
+
+    & .footnotes {
+      & ol {
+        @apply text-xs;
+      }
+      & p {
+        @apply my-0;
+      }
+      & hr {
+        @apply hidden;
+      }
+    }
   }
 
   /* Mini posts */
