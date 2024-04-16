@@ -52,7 +52,7 @@
     </header>
     <div class="prose px-1 text-sm sm:mb-8 md:ml-8">{{- .Content }}</div>
     {{- partial "related.html" . -}}
-    <div class="ml-2 tags mt-8 flex items-center text-xs font-light sm:hidden">
+    <div class="tags ml-2 mt-8 flex items-center text-xs font-light sm:hidden">
       {{ range .GetTerms "tags" }}
         <a
           href="{{ .RelPermalink }}"
