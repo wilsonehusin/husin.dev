@@ -1,5 +1,6 @@
 ---
 title: About me
+lastMod: 2024-03-06
 ---
 
 Hi there! I’m Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco.

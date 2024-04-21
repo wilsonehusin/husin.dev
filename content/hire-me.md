@@ -1,5 +1,6 @@
 ---
 title: "Hire me!"
+lastMod: 2024-03-06
 ---
 
 Hi, I'm Wilson, a software developer in San Francisco, California. I really like to **make things go fast ⚡️**
