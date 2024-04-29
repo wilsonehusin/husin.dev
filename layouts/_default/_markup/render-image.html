@@ -1,6 +1,8 @@
 {{- $img := .Page.Resources.Get .Destination }}
 {{- if $img }}
-  {{ $img = $img.Process "webp" | fingerprint }}
+  {{- if not (strings.HasSuffix $img.Name ".gif") }}
+    {{ $img = $img.Process "webp" | fingerprint }}
+  {{- end }}
   <p>
     <img
       src="{{ $img.RelPermalink }}"
