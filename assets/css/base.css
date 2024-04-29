@@ -177,6 +177,11 @@
     &.briefcase .lucide {
       @apply text-yellow-dim;
     }
+
+    &.rss .lucide {
+      /* This icon is always under a link, so use current for consistent coloring with text. */
+      @apply text-current;
+    }
   }
 
   h1,
