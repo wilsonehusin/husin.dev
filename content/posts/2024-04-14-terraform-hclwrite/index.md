@@ -1,7 +1,7 @@
 ---
 title: "A comparative guide to generate Terraform / HCL"
 description: |
-    Programatically writing Terraform using Go, hclwrite, and cty. Composing HCL from code without losing typesafety.
+  Programatically writing Terraform using Go, hclwrite, and cty. Composing HCL from code without losing typesafety.
 tags:
   - golang
   - terraform
@@ -91,7 +91,6 @@ m := cty.ObjectVal(map[string]cty.Value{
 rootBody.SetAttributeValue("musicians", m)
 ```
 
-
 ### Referencing another object
 
 ```hcl
@@ -154,7 +153,7 @@ rootBody.AppendUnstructuredTokens(
       Type:  hclsyntax.TokenComment,
       Bytes: []byte("# This is\n# a comment"),
 
-      SpacesBefore: 0,      
+      SpacesBefore: 0,
     },
   },
 )

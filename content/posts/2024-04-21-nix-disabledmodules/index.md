@@ -21,7 +21,7 @@ To accomplish a “working setup” I pretty much have to copy over [the service
 ```nix
 {
   disabledModules = [ "services/security/oauth2_proxy_nginx.nix" ];
-  
+
   # The rest of this file is copied from 2e751c077 of nixos/nixpkgs
   # under nixos/modules/services/security/oauth2_proxy_nginx.nix
   options.services.oauth2_proxy.nginx = {

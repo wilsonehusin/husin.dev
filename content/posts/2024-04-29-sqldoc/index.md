@@ -1,5 +1,5 @@
 ---
-title: 'SQLDoc: generate database schema documentation'
+title: "SQLDoc: generate database schema documentation"
 description: |
   Stop digging in your migrations and get the current database state written in markdown.
 header:
@@ -19,7 +19,7 @@ In early projects, migrations are still simple that `CREATE TABLE` declarations 
 
 In small projects, sqlc's generated structs within `models.go` would be sufficient. However, it's still difficult to find something beyond field types, such as default values and constraints.
 
-So I did something about it: I wrote a documentation generator called [SQLDoc](https://github.com/wilsonehusin/sqldoc).  It's very early! Like, I hacked it over 2-3 hours kind of "early".
+So I did something about it: I wrote a documentation generator called [SQLDoc](https://github.com/wilsonehusin/sqldoc). It's very early! Like, I hacked it over 2-3 hours kind of "early".
 
 ![Screencast of SQLDoc in action from terminal console](sqldoc-demo.gif)
 

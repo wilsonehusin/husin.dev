@@ -6,11 +6,11 @@ title = 'Wilson Husin'
 enableGitInfo = true
 capitalizeListTitles = false
 
-[build]
-[build.buildStats]
-enable = true
-
 copyright = '© Wilson Husin'
+
+[build]
+  [build.buildStats]
+  enable = true
 
 [params]
   description = "Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco."
