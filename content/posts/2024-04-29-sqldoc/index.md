@@ -2,6 +2,9 @@
 title: 'SQLDoc: generate database schema documentation'
 description: |
   Stop digging in your migrations and get the current database state written in markdown.
+header:
+  src: "header.png"
+  alt: "SQLDoc console preview, showing an example table schema in markdown format on terminal console."
 tags:
   - golang
   - sql
