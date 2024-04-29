@@ -10,8 +10,13 @@ capitalizeListTitles = false
 [build.buildStats]
 enable = true
 
+copyright = '© Wilson Husin'
+
 [params]
   description = "Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco."
+  [params.author]
+    name = "Wilson Husin"
+    email = "wilson@husin.dev"
 
 [related]
   includeNewer = true
