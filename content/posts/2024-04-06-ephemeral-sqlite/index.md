@@ -2,6 +2,7 @@
 title: Replacing complicated hashmaps with SQLite
 tags:
   - sqlite
+  - sql
   - golang
 description: >-
   I found myself in a situation of requiring multiple lookup keys for the same hashmap, along with other relational complications for a Go CLI application. Unexpectedly, it all becomes easier in SQLite.

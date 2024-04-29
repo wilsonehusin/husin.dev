@@ -1,3 +1,6 @@
+new-post SLUG:
+  hugo new posts/$(date +%Y-%m-%d)-{{SLUG}}/index.md
+
 hugo-dev:
   rm -rf public/*
   hugo server --bind 0.0.0.0 --templateMetrics
