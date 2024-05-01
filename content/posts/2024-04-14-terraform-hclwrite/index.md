@@ -8,6 +8,10 @@ tags:
   - hcl
 ---
 
+{{< callout class="info" >}}
+The project which inspired this post is now live on GitHub! Check it out and let me know what you think: [firehydrant/signals-migrator](https://github.com/firehydrant/signals-migrator).
+{{< /callout >}}
+
 Terraform end-users are programmers who would write `.tf` files. As such, if you are one, you would be familiar with a line like so:
 
 ```hcl

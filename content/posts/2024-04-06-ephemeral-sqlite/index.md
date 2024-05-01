@@ -8,6 +8,10 @@ description: >-
   I found myself in a situation of requiring multiple lookup keys for the same hashmap, along with other relational complications for a Go CLI application. Unexpectedly, it all becomes easier in SQLite.
 ---
 
+{{< callout class="info" >}}
+The project which inspired this post is now live on GitHub! Check it out and let me know what you think: [firehydrant/signals-migrator](https://github.com/firehydrant/signals-migrator).
+{{< /callout >}}
+
 In a recent project, I was working on a command line application with tricky data manipulation scenario. Imagine if you were moving members from mailing lists (e.g. Google Groups) to group chat service (e.g. Slack), where the goal is for members of the mailing list will find a new home in group chat channels.
 
 It is perfectly sensible for engineers with hacker spirit to say "script this out and run it for each of the groups" and I agree — surely it’s a thing that a few HTTP calls and hashmaps can solve?
