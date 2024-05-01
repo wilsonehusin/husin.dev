@@ -1,7 +1,7 @@
 <nav
   class="relative mx-auto flex max-w-7xl items-center justify-between gap-4 overflow-hidden bg-bg-harder pb-8 pt-4 text-center text-sm transition"
 >
-  <a href="/" class="group mr-2 flex items-center gap-2 px-4 text-lg font-bold">
+  <a href="/" class="group mr-2 flex items-center gap-2 text-lg font-bold">
     {{ with resources.Get "img/pp.webp" }}
       {{ with .Resize "64x" | fingerprint }}
         <img
@@ -16,7 +16,7 @@
     <span class="text-link duration-150"> {{ .Site.Title }} </span>
   </a>
   <div
-    class="menu menu-top ml-auto hidden items-center gap-1 px-4 font-medium md:flex"
+    class="menu menu-top ml-auto hidden items-center gap-1 font-medium md:flex"
   >
     {{ range $i, $e := .Site.Menus.main }}
       <a href="{{ .URL }}" class="text-link px-2">{{ .Title }}</a>
@@ -35,7 +35,7 @@
     </button>
   </div>
   <button
-    class="text-link flex px-4 md:hidden"
+    class="text-link flex md:hidden"
     title="Toggle navigation menu."
     aria-label="Navigation toggle button."
     onclick="toggleNavigationMenu()"
