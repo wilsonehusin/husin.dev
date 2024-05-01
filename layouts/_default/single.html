@@ -50,17 +50,21 @@
         </span>
       </div>
     </header>
-    <div class="prose px-1 text-sm sm:mb-8 md:ml-8">{{- .Content }}</div>
-    {{- partial "related.html" . -}}
-    <div class="tags ml-2 mt-8 flex items-center text-xs font-light sm:hidden">
-      {{ range .GetTerms "tags" }}
-        <a
-          href="{{ .RelPermalink }}"
-          class="tag-{{ .LinkTitle }} px-0.5 text-xs"
-        >
-          #{{ .LinkTitle }}
-        </a>
-      {{ end }}
+    <div class="prose px-1 text-sm sm:mb-8 md:ml-8">
+      {{- .Content }}
+      <div
+        class="tags not-prose mt-6 flex items-center text-xs font-light sm:hidden"
+      >
+        {{ range .GetTerms "tags" }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="tag-{{ .LinkTitle }} px-0.5 text-xs"
+          >
+            #{{ .LinkTitle }}
+          </a>
+        {{ end }}
+      </div>
+      {{- partial "related.html" . -}}
     </div>
   </article>
 {{ end }}

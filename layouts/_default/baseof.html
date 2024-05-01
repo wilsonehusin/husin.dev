@@ -63,12 +63,14 @@
     {{- block "head" . -}}{{- end -}}
   </head>
 
-  <body class="text-default bg-bg-harder px-4 pb-8 text-base">
+  <body class="text-default bg-bg-hard text-base">
     {{ partial "nav.html" . }}
-    {{ block "main" . }}{{ end }}
-    {{ block "footer" . }}{{ end }}
+    <div class="bg-bg-harder px-4 pb-8 pt-4">
+      {{ block "main" . }}{{ end }}
+      {{ block "footer" . }}{{ end }}
+    </div>
     <div
-      class="group mx-auto my-6 flex max-w-7xl flex-col items-start text-xs font-light text-fg4 sm:my-16"
+      class="group mx-auto my-6 flex max-w-7xl flex-col items-start px-4 text-xs font-light text-fg4 sm:my-12"
     >
       <hr class="my-2 w-8 text-yellow-dim" />
       <p class="font-semibold text-fg3">
