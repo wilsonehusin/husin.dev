@@ -7,68 +7,67 @@ enableGitInfo = true
 capitalizeListTitles = false
 
 copyright = '© Wilson Husin'
-theme = ['v1']
 
 [build]
-[build.buildStats]
-enable = true
+  [build.buildStats]
+  enable = true
 
 [params]
-description = "Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco."
-[params.author]
-name = "Wilson Husin"
-email = "wilson@husin.dev"
+  description = "Hi there! I'm Wilson, a software developer with side quests on cooking, coffee, and bicycles in San Francisco."
+  [params.author]
+    name = "Wilson Husin"
+    email = "wilson@husin.dev"
 
 [related]
-includeNewer = true
-toLower = true
-threshold = 60
+  includeNewer = true
+  toLower = true
+  threshold = 60
 [[related.indices]]
-applyFilter = false
-cardinalityThreshold = 0
-name = 'keywords'
-pattern = ''
-toLower = false
-type = 'basic'
-weight = 100
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'keywords'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 100
 [[related.indices]]
-applyFilter = false
-cardinalityThreshold = 0
-name = 'tags'
-pattern = ''
-toLower = false
-type = 'basic'
-weight = 80
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'tags'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 80
 [[related.indices]]
-applyFilter = false
-cardinalityThreshold = 0
-name = 'date'
-pattern = ''
-toLower = false
-type = 'basic'
-weight = 10
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'date'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 10
 
 [frontmatter]
-date = ["pubdate", ":filename", ":default", ":fileModTime"]
+  date = ["publishdate", ":filename", ":default", ":fileModTime"]
 
 [permalinks]
-[permalinks.page]
-posts = "/:slug/"
-mini = "/mini/:year:month:day:slug"
+  [permalinks.page]
+    posts = "/:slug/"
+    mini = "/mini/:year:month:day:slug"
 
 [menu]
 [[menu.main]]
-identifier = "about"
-name = "about"
-title = "About"
-url = "/about/"
-weight = "001"
+  identifier = "about"
+  name = "about"
+  title = "About"
+  url = "/about/"
+  weight = "001"
 [[menu.main]]
-identifier = "posts"
-name = "posts"
-title = "Posts"
-url = "/posts/"
-weight = "100"
+  identifier = "posts"
+  name = "posts"
+  title = "Posts"
+  url = "/posts/"
+  weight = "100"
 # [[menu.main]]
 #   identifier = "mini"
 #   name = "mini"
@@ -82,20 +81,20 @@ weight = "100"
 #   url = "/visual/"
 #   weight = "102"
 [[menu.main]]
-identifier = "hire-me"
-name = "hire-me"
-title = "Hire me"
-url = "/hire-me/"
-weight = "901"
+  identifier = "hire-me"
+  name = "hire-me"
+  title = "Hire me"
+  url = "/hire-me/"
+  weight = "901"
 
 [markup]
-[markup.highlight]
-noClasses = false
+  [markup.highlight]
+    noClasses = false
 
 [imaging]
-[imaging.exif]
-disableDate = true
-disableLatLong = true
+  [imaging.exif]
+    disableDate = true
+    disableLatLong = true
 
 [security.http]
 mediaTypes = ['^font/woff2$']

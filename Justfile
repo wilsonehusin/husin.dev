@@ -6,22 +6,22 @@ dev:
   set -eo pipefail
 
   just hugo-dev &
-  just css-watch-v1 &
+  just css-watch &
 
   wait
 
-build: css-gen-v1 hugo-build
+build: css-gen hugo-build
 
 hugo-dev:
   rm -rf public/*
   hugo server --bind 0.0.0.0 --templateMetrics
 
-hugo-build: css-gen-v1
+hugo-build: css-gen
   rm -rf public/*
   hugo --gc --minify
 
-css-gen-v1:
-  pnpm tailwindcss -i themes/v1/assets/css/base.css -o themes/v1/assets/css/dist.css --minify
+css-gen:
+  pnpm tailwindcss -i assets/css/base.css -o assets/css/dist.css --minify
 
-css-watch-v1:
-  pnpm tailwindcss -i themes/v1/assets/css/base.css -o themes/v1/assets/css/dist.css --watch
+css-watch:
+  pnpm tailwindcss -i assets/css/base.css -o assets/css/dist.css --watch
