@@ -3,11 +3,11 @@ const defaults = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./layouts/**/*.html",
+    "./themes/v1/layouts/**/*.html",
+    "./themes/v1/assets/css/chroma.css",
+    "./themes/v1/assets/css/base.css",
     "./assets/js/*.js",
     "./assets/icon/*.svg",
-    "./assets/css/chroma.css",
-    "./assets/css/base.css",
   ],
   safelist: ["tag-*"],
   darkMode: "class",
