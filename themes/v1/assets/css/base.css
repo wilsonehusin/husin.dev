@@ -109,13 +109,14 @@
       @apply text-blue-dim;
     }
     .tag-svelte,
+    .tag-firehydrant,
     .tag-git {
       @apply text-orange;
     }
-    .tag-meta,
     .tag-til {
       @apply text-orange-dim;
     }
+    .tag-career,
     .tag-projects,
     .tag-containers {
       @apply text-aqua;
@@ -123,6 +124,7 @@
     .tag-management {
       @apply text-purple;
     }
+    .tag-meta,
     .tag-linux {
       @apply text-yellow;
     }

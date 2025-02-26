@@ -3,10 +3,10 @@ title: "Hire me!"
 lastMod: 2024-03-06
 ---
 
-Hi, I'm Wilson, a software developer in San Francisco, California. I really like to **make things go fast ⚡️**
+Hi, I'm Wilson, [a software developer at FireHydrant](/firehydrant-year-1/) based in San Francisco, California. I really like to **make things go fast ⚡️**
 
 {{< callout class="briefcase" >}}
-I am no longer in the market as I recently joined [FireHydrant](https://firehydrant.io) to support engineering teams from ring to retro. [Come work with me](https://firehydrant.com/careers/).
+Existence of this page does not imply job search status. It is left up for reference on what it's like to work with me!
 {{</ callout >}}
 
 My focus is on building developer experience and reliable infrastructure. You may find my work to be incredibly useful if you are looking to:
@@ -30,15 +30,15 @@ Ultimately, I would like to work on difficult problems with kind people. If it s
 Some snippets of kind words from past colleagues about me:
 
 {{< callout class="testimonial" >}}
+"When you approve my PRs, something about that makes me feel like the code is actually good and safe."
+{{</ callout >}}
+
+{{< callout class="testimonial" >}}
 "**CI is so good** now that letting it run has **fast** enough feedback loop compared to locally running tests."
 {{</ callout >}}
 
 {{< callout class="testimonial" >}}
 "I used to hit retry on CI **at least once a day** and I have **not done it in the last month**."
-{{</ callout >}}
-
-{{< callout class="testimonial" >}}
-"I don't need to block a workday to finish this anymore since now **it's faster than I could finish my lunch**!"
 {{</ callout >}}
 
 My most gratifying accomplishments are when I deliver my work to products and organizations which users would pleasantly notice over time despite minimal publicity.

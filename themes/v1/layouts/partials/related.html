@@ -1,7 +1,7 @@
 {{ $related := .Site.RegularPages.Related . | first 5 }}
 {{ with $related }}
   <div class="prose prose-sm ml-2 pt-4 font-industrial text-fg4 md:ml-8">
-    <p class="text-sm font-semibold">Thanks for reading. Want more?</p>
+    <p class="text-sm font-semibold">Thanks for reading. More like this?</p>
     <ul>
       {{ range . }}
         <li>
