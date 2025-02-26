@@ -32,7 +32,7 @@ With that out of the way, comes the next big problem: it turns out that people _
 
 How can we support ingesting payloads from various sources, without it being a linear cost to product development roadmap?
 
-This was one of the most challenging project I have done: we considered so many alternatives and went back to square one so many times. However, we learned a lot on every time we wipe the whiteboard and start a new direction, building on top of it all.
+This was one of the most challenging projects I have done: we considered so many alternatives and went back to square one so many times. However, we learned a lot on every time we wipe the whiteboard and start a new direction, building on top of it all.
 
 In this feature release, [we think the right number of providers to support is **infinity**](https://firehydrant.com/blog/byopayload-custom-event-sources-for-signals-have-landed/). Give us a JavaScript function, we’ll run it for you in our sandbox. Just promise us the function finishes before we terminate them.
 
@@ -40,13 +40,13 @@ In this feature release, [we think the right number of providers to support is *
 
 Now that we support any kind of HTTP API, a new challenger appears: can I make a phone call to your on-call person directly?
 
-I mean, I know we call it _on-call_ so it makes sense to, you know, make phone calls.
+I mean, I know we call it _on-call_ so it makes sense to, you know, [make phone calls](https://firehydrant.com/changelog/live-call-routing-and-more/).
 
 ## Support hours
 
 A past job put me on a team whose customers are internal to the company, which were largely US-based. As such, our team then didn't have on-call duties, but we have "interrupt" duties: other parts of the organizations would ask our team questions to get support for internal infrastructure.
 
-This feature is made for folks holding jobs like past me. Your duties may be more critical than the one I had during your shift, but [there is no point on paging on-call outside of those shifts (e.g. financial industry going on halt outside of trading hours)](https://firehydrant.com/changelog/team-support-hours-interactive-ios-and-apple-watch-notifications-new-api-documentation-and-better-error-logging/). You can still get notified, but you can choose to not be waken up by it.
+This feature is made for folks holding jobs like past me. Your duties may be more critical than the one I had during your shift, but [there is no point of paging on-call outside of those shifts (e.g. financial industry going on halt outside of trading hours)](https://firehydrant.com/changelog/team-support-hours-interactive-ios-and-apple-watch-notifications-new-api-documentation-and-better-error-logging/). You can still get notified, but you can choose to not be woken up by it.
 
 ## Alert grouping
 
