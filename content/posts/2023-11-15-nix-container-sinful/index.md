@@ -94,7 +94,7 @@ By patching these import paths, Nix can ensure that programs can remain _pure_. 
 
 Nix provides a built-in way to build containers, compatible with Docker. We will not go into that today, because:
 
-1. Amos (aka fasterthanlime) has written a good one about it.
+1. Amos (aka fasterthanlime) has written a good one about it in [Generating a docker image with nix](https://fasterthanli.me/series/building-a-rust-service-with-nix/part-11#generating-a-docker-image).
 2. I don't think I have understood Nix Flakes enough for that method.
 
 So, we are going into town the other way!
