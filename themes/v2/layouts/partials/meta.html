@@ -1,0 +1,61 @@
+<!-- Variables -->
+{{- $title := site.Title -}}
+{{- if .Params.hide_site_title -}}
+  {{- $title = .Page.Title -}}
+{{- else if .Page.Title -}}
+  {{- $title = fmt.Printf "%s | %s" .Page.Title site.Title -}}
+  {{- if eq .Page.Kind "term" -}}
+    {{- $title = fmt.Printf "%s%s" "#" $title -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $desc := site.Params.Description -}}
+{{- if .Params.Description -}}
+  {{- $desc = .Params.Description -}}
+{{- else if and (eq .Page.Kind "page") .Page.Summary -}}
+  {{- $desc = .Page.Summary -}}
+{{- end -}}
+
+{{- $imgAlt := fmt.Printf "Profile picture of %s." site.Title -}}
+{{- $imgPreview := resources.Get "img/pp.webp" -}}
+{{- $imgCard := "summary" -}}
+{{- if .Page.Param "header" -}}
+  {{- $imgAlt = .Page.Param "header.alt" -}}
+  {{- $imgPreview = .Page.Resources.GetMatch (.Page.Param "header.src") -}}
+  {{- $imgPreview = $imgPreview.Process "webp" -}}
+  {{- $imgCard = "summary_large_image" -}}
+{{- end -}}
+{{- $imgPreview = $imgPreview | fingerprint -}}
+
+
+<!-- Common -->
+<title>{{- $title -}}</title>
+<link rel="canonical" href="{{- .Permalink -}}" />
+<meta name="description" content="{{- site.Params.Description -}}" />
+{{- with resources.Get "img/pp.webp" -}}
+  {{- with .Resize "32x" | fingerprint -}}
+    <link rel="icon" type="image/webp" href="{{- .RelPermalink -}}" />
+  {{- end -}}
+{{- end -}}
+
+
+<!-- OpenGraph -->
+<meta property="og:title" content="{{- $title -}}" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="{{- site.Title -}}" />
+<meta property="og:url" content="{{- .Permalink -}}" />
+<meta property="og:description" content="{{- $desc -}}" />
+<meta property="og:image" content="{{- $imgPreview.Permalink -}}" />
+<meta property="og:image:alt" content="{{- $imgAlt -}}" />
+
+<!-- Twitter -->
+<meta name="twitter:title" content="{{- $title -}}" />
+<meta name="twitter:description" content="{{- $desc -}}" />
+<meta name="twitter:image" content="{{- $imgPreview.Permalink -}}" />
+<meta name="twitter:image:alt" content="{{- $imgAlt -}}" />
+<meta name="twitter:card" content="{{- $imgCard -}}" />
+<meta name="twitter:creator" content="@wilsonehusin" />
+<meta name="twitter:site" content="@wilsonehusin" />
+<meta property="twitter:site_name" content="{{- site.Title -}}" />
+<meta property="twitter:url" content="{{- .Permalink -}}" />
+<meta property="twitter:domain" content="husin.dev" />

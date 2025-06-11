@@ -1,0 +1,24 @@
+{{ define "head" }}
+  <link rel="me" href="https://hachyderm.io/@wilson" />
+{{ end }}
+
+{{ define "main" }}
+  <article class="mx-auto max-w-7xl gap-8 md:flex">
+    <div class="prose px-1 text-sm">
+      {{- .Content }}
+    </div>
+    <div class="mx-auto mt-8 max-w-[600px] md:m-0">
+      {{ with resources.Get "img/portrait.webp" }}
+        {{ with .Resize "700x webp q90" | fingerprint }}
+          <img
+            class="rounded-xl"
+            src="{{ .RelPermalink }}"
+            height="{{ .Height }}"
+            width="{{ .Width }}"
+            alt="Self portrait of {{ site.Title }}."
+          />
+        {{ end }}
+      {{ end }}
+    </div>
+  </article>
+{{ end }}

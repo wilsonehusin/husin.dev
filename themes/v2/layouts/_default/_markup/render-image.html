@@ -1,0 +1,17 @@
+{{- $img := .Page.Resources.Get .Destination }}
+{{- if $img }}
+  {{- if not (strings.HasSuffix $img.Name ".gif") }}
+    {{ $img = $img.Process "webp" | fingerprint }}
+  {{- end }}
+  <p>
+    <img
+      src="{{ $img.RelPermalink }}"
+      alt="{{ .Text }}"
+      height="{{ $img.Height }}"
+      width="{{ $img.Width }}"
+      loading="lazy"
+      decoding="async"
+      {{ with .Title }}title="{{ . }}"{{ end }}
+    />
+  </p>
+{{- end }}

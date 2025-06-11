@@ -1,0 +1,66 @@
+{{ define "head" }}
+  <meta
+    property="article:published_time"
+    content="{{- time.Format "2006-01-02T15:04:05Z0700" .Page.Date.UTC -}}"
+  />
+{{ end }}
+
+{{ define "main" }}
+  <article class="mx-auto max-w-7xl">
+    <header class="mb-2 mt-4 max-w-[64ch] md:ml-4">
+      <h1
+        class="font-industrial text-4xl font-bold leading-none tracking-tight text-fg1 md:-ml-2 md:text-5xl"
+      >
+        {{- .Page.Title -}}
+      </h1>
+      {{- if .Page.Description }}
+        <p class="not-prose mt-4 font-medium text-fg4">
+          {{- .Page.Description | markdownify -}}
+        </p>
+      {{- end }}
+      {{- with .Param "header" -}}
+        {{ $f := $.Resources.GetMatch .src }}
+        {{ $f = $f.Process "webp" | fingerprint }}
+        <img
+          class="my-4"
+          src="{{ $f.RelPermalink }}"
+          height="{{ $f.Height }}"
+          width="{{ $f.Width }}"
+          alt="{{ .alt }}"
+        />
+      {{- end -}}
+      <div class="flex items-center">
+        <p
+          class="tags my-2 hidden items-center justify-end text-xs font-light sm:flex"
+        >
+          {{ range .GetTerms "tags" }}
+            <a
+              href="{{ .RelPermalink }}"
+              class="tag-{{ .LinkTitle }} px-0.5 text-xs"
+            >
+              #{{ .LinkTitle }}
+            </a>
+          {{ end }}
+        </p>
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow-dim" />
+        <span
+          class="not-prose rounded-full font-serif text-sm font-semibold text-fg4"
+        >
+          {{- time.Format "January 2, 2006" .Page.Date.UTC -}}
+        </span>
+      </div>
+    </header>
+    <div class="prose px-1 text-sm sm:mb-8 md:ml-8">{{- .Content }}</div>
+    {{- partial "related.html" . -}}
+    <div class="tags ml-2 mt-8 flex items-center text-xs font-light sm:hidden">
+      {{ range .GetTerms "tags" }}
+        <a
+          href="{{ .RelPermalink }}"
+          class="tag-{{ .LinkTitle }} px-0.5 text-xs"
+        >
+          #{{ .LinkTitle }}
+        </a>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}

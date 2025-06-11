@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      {{- with resources.Get "js/dark-mode.js" | minify -}}
+        {{- .Content | safeJS -}}
+      {{- end -}}
+      evalDarkMode();
+    </script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    {{- hugo.Generator -}}
+
+    {{- $fonts := slice "inter" "victor" -}}
+    {{- range $fonts -}}
+      {{- $path := fmt.Printf "css/fonts/%s.css" . -}}
+      {{- $r := resources.Get $path -}}
+      {{- with resources.ExecuteAsTemplate $path $ $r | minify | fingerprint -}}
+        <link
+          rel="stylesheet"
+          href="{{- .RelPermalink -}}"
+          integrity="{{- .Data.Integrity -}}"
+        />
+      {{- end -}}
+    {{- end -}}
+
+    {{- $stylesheets := slice "gruvbox" "chroma" "dist" -}}
+    {{- range $stylesheets -}}
+      {{- $path := fmt.Printf "css/%s.css" . -}}
+      {{- with resources.Get $path | minify | fingerprint -}}
+        <link
+          rel="stylesheet"
+          href="{{- .RelPermalink -}}"
+          integrity="{{- .Data.Integrity -}}"
+        />
+      {{- end -}}
+    {{- end -}}
+
+    {{- $javascripts := slice "navigation-menu" -}}
+    {{- range $javascripts -}}
+      {{- $path := fmt.Printf "js/%s.js" . -}}
+      {{- with resources.Get $path | minify | fingerprint -}}
+        <script
+          src="{{- .RelPermalink -}}"
+          integrity="{{- .Data.Integrity -}}"
+        ></script>
+      {{- end -}}
+    {{- end -}}
+
+    {{- $jsVendors := slice
+      (dict
+      "url" "https://cdn.jsdelivr.net/npm/@github/relative-time-element@4/dist/bundle.js"
+      "rename" "relative-time-element.js")
+      (dict
+      "url" "https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js"
+      "rename" "instantpage.js")
+    -}}
+    {{- range $jsVendors -}}
+      {{- partial "vendor/js.html" . -}}
+    {{- end -}}
+    {{- partial "meta.html" . -}}
+    {{- block "head" . -}}{{- end -}}
+  </head>
+
+  <body class="text-default bg-bg-harder px-4 pb-8 text-base">
+    {{ partial "nav.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ block "footer" . }}{{ end }}
+    <div
+      class="group mx-auto my-6 flex max-w-7xl flex-col items-start text-xs font-light text-fg4 sm:my-16"
+    >
+      <hr class="my-2 w-8 text-yellow-dim" />
+      <p class="font-semibold text-fg3">
+        © 2023-{{ time.Now.Year }} Wilson Husin
+      </p>
+      {{- with time.Format "2006-01-02T15:04:05Z0700" .Site.LastChange -}}
+        <p>
+          This site was last updated
+          <relative-time datetime="{{- . -}}">{{- . -}}</relative-time>.
+        </p>
+      {{- end -}}
+      <code
+        class="text-[0.9em] font-semibold text-transparent duration-100 group-hover:text-fg4"
+        >:wq</code
+      >
+    </div>
+    {{- partial "analytics.html" . -}}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <article class="mx-auto max-w-7xl">
+    <header class="mb-2 mt-4">
+      <h1
+        class="font-industrial text-6xl font-bold leading-none tracking-tight text-fg1"
+      >
+        {{- .Page.Title -}}
+      </h1>
+      {{- if .Page.Title }}
+        <hr class="mx-1.5 my-8 max-w-[48rem] flex-grow text-yellow" />
+      {{- end }}
+    </header>
+    <div class="prose px-1 text-sm md:ml-8">
+      {{- .Content }}
+    </div>
+  </article>
+{{ end }}

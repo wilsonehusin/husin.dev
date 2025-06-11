@@ -1,0 +1,10 @@
+{{ $selected := .Get "class" }}
+{{ $icon := resources.Get (fmt.Printf "icon/callout/%s.svg" (or $selected "default")) | minify | fingerprint }}
+
+
+<div
+  class="callout no-prose {{ $selected }} flex items-start rounded-md border-2 bg-bg-hard px-4 py-2 shadow"
+>
+  {{- $icon.Content | safeHTML }}
+  <article class="prose prose-sm">{{- .Inner | markdownify -}}</article>
+</div>
