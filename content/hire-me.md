@@ -3,7 +3,7 @@ title: "Hire me!"
 lastMod: 2024-03-06
 ---
 
-Hi, I'm Wilson, [a software developer at FireHydrant](/firehydrant-year-1/) based in San Francisco, California. I really like to **make things go fast ⚡️**
+Hi, I'm Wilson, a software developer at NVIDIA based in San Francisco Bay Area, California. I really like to **make things go fast ⚡️**
 
 {{< callout class="briefcase" >}}
 Existence of this page does not imply job search status. It is left up for reference on what it's like to work with me!
@@ -42,6 +42,12 @@ Some snippets of kind words from past colleagues about me:
 {{</ callout >}}
 
 My most gratifying accomplishments are when I deliver my work to products and organizations which users would pleasantly notice over time despite minimal publicity.
+
+- At FireHydrant, I scaled their on-call product from launch day to enterprises.
+
+  - I also built tooling to support customer onboarding / migration from existing providers such as PagerDuty.
+  - Over various investigations, I empowered support teams to learn and diagnose our services using observability tools.
+  - Managing technical debt as the team ships, to ensure decisions from the past do not block us inconveniently.
 
 - At Modern Treasury, I worked in internal tools and build system.
 
